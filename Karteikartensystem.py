@@ -1,9 +1,3 @@
-print("Hallo Welt")
-
-print("Hallo Zusammen")
-
-print("Bastardo")
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
