@@ -1,0 +1,27 @@
+{
+  "next_id": 6,
+  "cards": [
+    {
+      "id": 1,
+      "question": "Was ist die Hauptstadt von Deutschland?",
+      "answer": "Berlin",
+      "topic": "Geografie"
+    },
+    {
+      "id": 3,
+      "question": "Was ist die Hauptstadt der Schweiz?",
+      "answer": "Bern",
+      "topic": "Geografie"
+    },
+    {
+      "id": 5,
+      "question": "Was ist die Vergangenheitsform von sein?",
+      "answer": "gewesen",
+      "topic": "Deutsch Grammatik"
+    }
+  ],
+  "topics": [
+    "Geografie",
+    "Deutsch Grammatik"
+  ]
+}
