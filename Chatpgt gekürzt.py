@@ -1,5 +1,5 @@
 import random
-
+#Test
 DATEI = "karteikarten.txt"
 
 def lade_karten():
