@@ -17,7 +17,7 @@ def lade_karten():
     except FileNotFoundError:
         pass
     return k
-
+#kommentar
 def speichere_karten(k):
     with open(DATEI,"w",encoding="utf-8") as f:
         for x in k:
