@@ -22,6 +22,7 @@ def lade_karten():
     karten = []
     try:
         with open(DATEI_NAME, "r", encoding="utf-8") as f:
+            #was ist encoding beispielweise hier in dieser Zeile?
             for zeile in f:
                 zeile = zeile.strip()
                 if not zeile:
@@ -227,5 +228,4 @@ def karte_loeschen(karten):
 
 
 def themen_verwalten(karten):
-    print("\n--- Themen verwalten -
-
+    print("\n--- Themen verwalten -")
