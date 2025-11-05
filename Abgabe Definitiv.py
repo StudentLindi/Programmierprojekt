@@ -5,10 +5,7 @@ DATEI = "karteikartenfile.txt"
 
 def löschen(k):
     if not k: print("Noch keine Karten vorhanden."); return
-    zeige_karten(k); idx=wähle_index(k)
-    if idx is None: return
-    if input("Wirklich löschen? (j/N): ").strip().lower()=="j":
-       
+    
 
 
 
