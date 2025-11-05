@@ -2,7 +2,7 @@ import random
 #Test
 DATEI = "karteikartenfile.txt"
 
-
+#Hallo
 
 
 
