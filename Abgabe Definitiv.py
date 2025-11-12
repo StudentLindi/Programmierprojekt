@@ -51,7 +51,7 @@ def lade_karten():
                 if len(teile) < 5:
                     # Ungültige Zeile überspringen
                     continue
-
+#Tags sind wie Fächer, für den User zu unterteilen in welche Listen er die Karteikarten will
                 frage = teile[0]
                 antwort = teile[1]
                 tags_str = teile[2]
@@ -64,7 +64,7 @@ def lade_karten():
                 else:
                     tags = []
 
-                # In ein einheitliches Dict umwandeln
+                # In ein einheitliches Dict umwandeln (dict =dictionary)
                 eintrag = {
                     "frage": frage,
                     "antwort": antwort,
