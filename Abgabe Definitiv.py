@@ -1,4 +1,5 @@
-#Code Chatgpt einfache Version
+#definitive Abgabe Programmierprojekt Karteikartensystem
+#Carl Klein, Ylllind Gashi, David Lienhardt
 
 import random
 
