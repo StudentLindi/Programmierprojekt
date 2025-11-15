@@ -13,7 +13,7 @@ def lade_karten():
     karten_liste = []
 
     try:
-        with open(DATEI, "r", encoding="utf-8") as f:
+        with open(DATEI, "r") as f:
             for zeile in f:
                 # Zeilenumbruch entfernen
                 zeile = zeile.rstrip("\n")
@@ -64,7 +64,7 @@ def lade_karten():
 # Karteikarten in die Datei schreiben
 # ------------------------------------------------------------
 def speichere_karten(karten_liste):
-    with open(DATEI, "w", encoding="utf-8") as f:
+    with open(DATEI, "w") as f:
         for karte in karten_liste:
             # Tags wieder zu einem String zusammensetzen
             if karte["tags"]:
