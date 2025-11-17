@@ -127,7 +127,7 @@ def zeige_karten(karten_liste, tag_filter=None):
 
 
 # ------------------------------------------------------------
-# Nutzer wählt eine Karten-Nummer
+# Nutzer wählt eine Karten-Nummer                                      Bis hier ist der code allgemein und von allen zu verstehen
 # ------------------------------------------------------------
 def wähle_index(karten_liste):
     if not karten_liste:
@@ -153,7 +153,7 @@ def wähle_index(karten_liste):
 
 
 # ------------------------------------------------------------
-# Lernmodus: nacheinander Fragen zeigen
+# Lernmodus: nacheinander Fragen zeigen                                                             carl Start
 # ------------------------------------------------------------
 def lernen(karten_liste):
     if not karten_liste:
@@ -271,10 +271,10 @@ def prüfungsmodus(karten_liste):
 
     # Fortschritt speichern
     speichere_karten(karten_liste)
-
+#--------------------------------------------------------------------------------Carl Ende
 
 # ------------------------------------------------------------
-# Eine Karte bearbeiten
+# Eine Karte bearbeiten                                                             David start
 # ------------------------------------------------------------
 def bearbeiten(karten_liste):
     if not karten_liste:
@@ -344,10 +344,10 @@ def löschen(karten_liste):
         print("Karte gelöscht.")
     else:
         print("Abgebrochen.")
-
+#---------------------------------------------------------------------------------------------------David Ende
 
 # ------------------------------------------------------------
-# Neue Karte hinzufügen
+# Neue Karte hinzufügen                                                                             Lindi Start               
 # ------------------------------------------------------------
 def hinzufügen(karten_liste):
     # Frage und Antwort dürfen nicht leer sein
@@ -380,9 +380,9 @@ def hinzufügen(karten_liste):
     speichere_karten(karten_liste)
     print("Karte hinzugefügt.")
 
-
+#-----------------------------------------------------------------------------------------Lindi Ende
 # ------------------------------------------------------------
-# Hauptmenü
+# Hauptmenü                                                                                Wieder Allgemein
 # ------------------------------------------------------------
 def menü():
     karten_liste = lade_karten()
