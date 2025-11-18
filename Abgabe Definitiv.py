@@ -389,7 +389,7 @@ def menü():
     karten_liste = lade_karten()
 
     while True:
-        print("\n=== Karteikartenprogramm ===")
+        print("\n=== Karteisystem by Carl, Yllind & David ===")
         print("1) Lernen")
         print("2) Prüfungsmodus")
         print("3) Karteikarte bearbeiten")
