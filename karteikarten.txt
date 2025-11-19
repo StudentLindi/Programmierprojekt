@@ -1,10 +1,7 @@
-Was ist die Hauptstadt der Schweiz?|Bern|Geografie|0|0
-Was ist die hauptstadt von Deutschland?|Berlin|Geografie|0|0
-Was ist der grösste Kontinent der Erde?|AFrika|Geografie|0|0
-Welcher ist der längste Fluss der Welt?|Der Nil|Geografie|0|0
-Wie viele Kontinente gibt es auf der Erde?|7|Geogrfie|0|0
-Wie viele menschliche Bewohner hat die Erde?|>9'000'000'000|Geografie|0|0
-Welcher ist der grösste Berg  der Welt?|Der Mount Everest|Geografie|0|0
-Was sind die 3 grössten Nachbarländer der Schweiz?|Frankreich, Deutschland, Italien|Geografie|0|0
-Welches Land hat die meisten EInwohner?|Indien|Geografie|0|0
-WIe viele Einwohner hat Indien)|>1'450'000'000|Geografie|0|0
+Was ist die Formel der Relativitätstheorie?|E=MC2|Mathematik|2|0
+Was isst jana zum Frühstück|Bieber|jana|0|1
+Was hat carl für eine augenfarbe?|GElb|Carl|2|0
+Warum ist deine Mutter so fett?|Weil pascale so frech ist und meine Mutter deshalb so viel Nervenfutter braucht|Haupstädte|0|0
+was ist der grösste fluss der welt?|Der Nil|Gewässer|0|0
+Was ist die Hauptstadt von Der Schweiz?|Kongo|Hauptstädte|0|0
+was isst brin azum Frühstück|Nix|Brina|1|0
