@@ -1,7 +1,9 @@
-Was ist die Formel der Relativitätstheorie?|E=MC2|Mathematik|2|0
-Was isst jana zum Frühstück|Bieber|jana|0|1
-Was hat carl für eine augenfarbe?|GElb|Carl|2|0
-Warum ist deine Mutter so fett?|Weil pascale so frech ist und meine Mutter deshalb so viel Nervenfutter braucht|Haupstädte|0|0
-was ist der grösste fluss der welt?|Der Nil|Gewässer|0|0
-Was ist die Hauptstadt von Der Schweiz?|Kongo|Hauptstädte|0|0
-was isst brin azum Frühstück|Nix|Brina|1|0
+Was ist die Hauptstatd der Schweiz?|Bern|Geografie|0|0
+Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|0|0
+Was ist die Hauptstatd von Frankreich?|Paris|Geografie|0|0
+Was ist die Hauptstadt der vereinigtesn Staaten?|Washington D.C.|Geografie|0|0
+Was ist die Hauptstadt von Russland?|Moskau|Geogrfie|0|0
+Was ist die Hauptstadt von Italien?|Rom|Geografie|0|0
+Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|0|0
+Was ist die Hauptstadt von Spanien?|Madrid|Geografie|0|0
+Was ist die Hauptstadt von �sterreich?|Wien|Geografie|0|0
