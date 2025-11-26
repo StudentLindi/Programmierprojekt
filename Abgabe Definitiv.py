@@ -5,7 +5,9 @@ import random
 
 # Datei, in der die Karteikarten gespeichert werden (Globale/Konstante)
 DATEI = "karteikarten.txt"
-
+#evtl weitere Konstante verwenden falls mehrere Dateien import werden
+#extra datei mit konstanten erstellen und dann import die datei
+#richtig und falsch bspw als Konstante erstellen
 
 # Karteikarten aus der Datei laden
 #Lindi Teil 1
@@ -56,13 +58,17 @@ def lade_karten():
 
     except FileNotFoundError:
         # Wenn die Datei noch nicht existiert, einfach leere Liste zurückgeben
+        #Fehlermeldung noch eingeben 
+        #permission error
+        #io erorr
+
         pass
 
     return karten_liste
 
 
 # Karteikarten in die Datei schreiben
-#David
+#David, Encoding (Latin 1 sehr spezifisch)
 def speichere_karten(karten_liste):
     with open(DATEI, "w", encoding="latin-1") as f:
         for karte in karten_liste:
@@ -83,7 +89,7 @@ def speichere_karten(karten_liste):
             f.write(zeile + "\n")
 
 
-# Benutzer-Eingabe, die nicht leer sein darf
+# Benutzer-Eingabe, die nicht leer sein darf (evtl kürzer formulieren)
 def eingabe_nicht_leer(prompt_text):
     text = input(prompt_text).strip()
 
@@ -230,7 +236,7 @@ def prüfungsmodus(karten_liste):
         eingabe = input(f"Wieviele Fragen? (1–{len(passende)}): ").strip()
         anzahl = int(eingabe)
     except ValueError:
-        # Fallback: 10 oder maximal so viele wie vorhanden
+        # Fallback: 10 oder maximal so viele wie vorhanden, warum min. 10?
         anzahl = min(10, len(passende))
         print(f"Ungültige Zahl, nehme {anzahl}.")
 
@@ -377,9 +383,12 @@ def hinzufügen(karten_liste):
     print("Karte hinzugefügt.")
 
 
-# Hauptmenü                                                                                Wieder Allgemein
+# Hauptmenü   in der eigenen Datei erstellen und Import   
+# #lern und prüfmodus zusammensnehmen
+#                                                           Wieder Allgemein
 
 def menü():
+    """Hauptmenü (Funktionskommentare in dieser Form hinterlegen)"""
     karten_liste = lade_karten()
 
     while True:
@@ -402,7 +411,7 @@ def menü():
         elif wahl == "4":
             löschen(karten_liste)
         elif wahl == "5":
-            hinzufügen(karten_liste)
+            hinzufuegen(karten_liste) 
         elif wahl == "0":
             print("Tschüss!")
             break
