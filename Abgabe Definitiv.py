@@ -96,11 +96,7 @@ def eingabe_nicht_leer(prompt_text):
 
 #Lindi Teil 1 Ende
 # Alle Karten anzeigen (optional nach Tag filtern)
-<<<<<<< HEAD
 # -------------------------------------------------------------
-=======
-#David
->>>>>>> bb48c53 (abstände entfernt)
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
     anzahl_ausgegeben = 0
