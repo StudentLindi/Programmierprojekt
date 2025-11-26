@@ -264,7 +264,7 @@ def prüfungsmodus(karten_liste):
             karte["richtig"] = karte["richtig"] + 1
         else:
             print(" Falsch.")
-            print("Richtig:", karte["antwort"])
+            print("Richtig: ", karte["antwort"])
             karte["falsch"] = karte["falsch"] + 1
 
     # Ergebnis anzeigen
