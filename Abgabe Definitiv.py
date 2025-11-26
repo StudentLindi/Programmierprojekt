@@ -12,9 +12,9 @@ DATEI = "karteikarten.txt"
 # ------------------------------------------------------------
 def lade_karten():
     karten_liste = []
-
+#hier haben wir Datei direkt als Konstante gespeichert
     try:
-        with open(DATEI, "r") as f:
+        with open(DATEI, "r", encoding = "latin-1") as f:
             for zeile in f:
                 # Zeilenumbruch entfernen
                 zeile = zeile.rstrip("\n")
@@ -65,7 +65,7 @@ def lade_karten():
 # Karteikarten in die Datei schreiben
 # ------------------------------------------------------------
 def speichere_karten(karten_liste):
-    with open(DATEI, "w") as f:
+    with open(DATEI, "w", encoding="latin-1") as f:
         for karte in karten_liste:
             # Tags wieder zu einem String zusammensetzen
             if karte["tags"]:
@@ -154,7 +154,7 @@ def wähle_index(karten_liste):
 
 
 # ------------------------------------------------------------
-# Lernmodus: nacheinander Fragen zeigen                         carl Start
+# Lernmodus: nacheinander Fragen zeigen                                                             carl Start
 # ------------------------------------------------------------
 def lernen(karten_liste):
     if not karten_liste:
@@ -200,6 +200,8 @@ def lernen(karten_liste):
         weiter = input("Weiter? (Enter = ja, q = beenden): ").strip().lower()
         if weiter == "q":
             break
+        #.strip(): Alle Leerzeichen werden am Anfang und Ende der Benutzereingabe entfernt
+        #.lower(): Die Eingabe des Users wird in Kleinbuchstaben umgewandelt
 
     if geuebt == 0:
         print("Keine passende Karte geübt.")
@@ -209,7 +211,7 @@ def lernen(karten_liste):
 
 
 # ------------------------------------------------------------
-# Prüfungsmodus: feste Anzahl Fragen, Punkte zählen
+# Prüfungsmodus: feste Anzahl Fragen, Punkte zählen (CARL TEIL)    
 # ------------------------------------------------------------
 def prüfungsmodus(karten_liste):
     if not karten_liste:
@@ -381,15 +383,15 @@ def hinzufügen(karten_liste):
     speichere_karten(karten_liste)
     print("Karte hinzugefügt.")
 
-#------------------------------------------------Lindi Ende
+#-----------------------------------------------------------------------------------------Lindi Ende
 # ------------------------------------------------------------
-# Hauptmenü                                      Wieder Allgemein
+# Hauptmenü                                                                                Wieder Allgemein
 # ------------------------------------------------------------
 def menü():
     karten_liste = lade_karten()
 
     while True:
-        print("\n=== Karteisystem by Carl, Yllind & David ===")
+        print("\n=== Karteisystem by Carl, Ylllind & David ===")
         print("1) Lernen")
         print("2) Prüfungsmodus")
         print("3) Karteikarte bearbeiten")
