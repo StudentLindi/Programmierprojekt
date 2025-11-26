@@ -104,7 +104,7 @@ Yllind Gashi – Hinzufügen neuer Karten
 
 Alle – Allgemeine Struktur, Menüführung, Kommentare
 
-⭐ Besonderheiten des Projekts
+Besonderheiten des Projekts
 
 Nutzerfreundliches, simples Menü
 
