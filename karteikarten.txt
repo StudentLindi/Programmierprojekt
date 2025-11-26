@@ -6,4 +6,4 @@ Was ist die Hauptstadt von Russland?|Moskau|Geogrfie|1|1
 Was ist die Hauptstadt von Italien?|Rom|Geografie|1|0
 Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|0|1
 Was ist die Hauptstadt von Spanien?|Madrid|Geografie|1|1
-Was ist die Hauptstadt von Österreich?|Wien|Geografie|1|0
+Was ist die Hauptstadt von sterreich?|Wien|Geografie|1|0
