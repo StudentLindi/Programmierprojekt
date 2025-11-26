@@ -3,13 +3,12 @@
 
 import random
 
-# Datei, in der die Karteikarten gespeichert werden
+# Datei, in der die Karteikarten gespeichert werden (Globale/Konstante)
 DATEI = "karteikarten.txt"
 
 
-# ------------------------------------------------------------
 # Karteikarten aus der Datei laden
-# ------------------------------------------------------------
+
 def lade_karten():
     karten_liste = []
 #hier haben wir Datei direkt als Konstante gespeichert
@@ -61,9 +60,8 @@ def lade_karten():
     return karten_liste
 
 
-# ------------------------------------------------------------
 # Karteikarten in die Datei schreiben
-# ------------------------------------------------------------
+
 def speichere_karten(karten_liste):
     with open(DATEI, "w", encoding="latin-1") as f:
         for karte in karten_liste:
@@ -84,9 +82,7 @@ def speichere_karten(karten_liste):
             f.write(zeile + "\n")
 
 
-# ------------------------------------------------------------
 # Benutzer-Eingabe, die nicht leer sein darf
-# ------------------------------------------------------------
 def eingabe_nicht_leer(prompt_text):
     text = input(prompt_text).strip()
 
@@ -98,9 +94,12 @@ def eingabe_nicht_leer(prompt_text):
     return text
 
 
-# ------------------------------------------------------------
 # Alle Karten anzeigen (optional nach Tag filtern)
+<<<<<<< HEAD
 # -------------------------------------------------------------
+=======
+
+>>>>>>> bb48c53 (abstände entfernt)
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
     anzahl_ausgegeben = 0
@@ -127,9 +126,9 @@ def zeige_karten(karten_liste, tag_filter=None):
         print("(keine passenden Karten)")
 
 
-# ------------------------------------------------------------
+
 # Nutzer wählt eine Karten-Nummer           Bis hier ist der code allgemein und von allen zu verstehen
-# ------------------------------------------------------------
+
 def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
@@ -153,9 +152,9 @@ def wähle_index(karten_liste):
     return None
 
 
-# ------------------------------------------------------------
+
 # Lernmodus: nacheinander Fragen zeigen                                                             carl Start
-# ------------------------------------------------------------
+
 def lernen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -210,9 +209,8 @@ def lernen(karten_liste):
     speichere_karten(karten_liste)
 
 
-# ------------------------------------------------------------
 # Prüfungsmodus: feste Anzahl Fragen, Punkte zählen (CARL TEIL)    
-# ------------------------------------------------------------
+
 def prüfungsmodus(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -276,9 +274,9 @@ def prüfungsmodus(karten_liste):
     speichere_karten(karten_liste)
 #---------------------------------------------Carl Ende
 
-# ------------------------------------------------------------
+
 # Eine Karte bearbeiten                       David start
-# ------------------------------------------------------------
+
 def bearbeiten(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -326,9 +324,8 @@ def bearbeiten(karten_liste):
     print("Änderungen gespeichert.")
 
 
-# ------------------------------------------------------------
 # Eine Karte löschen
-# ------------------------------------------------------------
+
 def löschen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -349,9 +346,8 @@ def löschen(karten_liste):
         print("Abgebrochen.")
 #-----------------------------------------------David Ende
 
-# ------------------------------------------------------------
 # Neue Karte hinzufügen                         Lindi Start               
-# ------------------------------------------------------------
+
 def hinzufügen(karten_liste):
     # Frage und Antwort dürfen nicht leer sein
     frage = eingabe_nicht_leer("Frage: ")
@@ -383,10 +379,9 @@ def hinzufügen(karten_liste):
     speichere_karten(karten_liste)
     print("Karte hinzugefügt.")
 
-#-----------------------------------------------------------------------------------------Lindi Ende
-# ------------------------------------------------------------
+
 # Hauptmenü                                                                                Wieder Allgemein
-# ------------------------------------------------------------
+
 def menü():
     karten_liste = lade_karten()
 
