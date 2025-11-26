@@ -100,7 +100,7 @@ def eingabe_nicht_leer(prompt_text):
 
 # ------------------------------------------------------------
 # Alle Karten anzeigen (optional nach Tag filtern)
-# ------------------------------------------------------------
+# -------------------------------------------------------------
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
     anzahl_ausgegeben = 0
@@ -257,11 +257,11 @@ def prüfungsmodus(karten_liste):
         richtige_antwort = karte["antwort"].strip().lower()
 
         if nutzer_antwort == richtige_antwort:
-            print("✅ Richtig!")
+            print(" Richtig!")
             punkte = punkte + 1
             karte["richtig"] = karte["richtig"] + 1
         else:
-            print("❌ Falsch.")
+            print(" Falsch.")
             print("Richtig:", karte["antwort"])
             karte["falsch"] = karte["falsch"] + 1
 
