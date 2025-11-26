@@ -8,6 +8,7 @@ DATEI = "karteikarten.txt"
 
 
 # Karteikarten aus der Datei laden
+#Lindi Teil 1
 
 def lade_karten():
     karten_liste = []
@@ -61,7 +62,7 @@ def lade_karten():
 
 
 # Karteikarten in die Datei schreiben
-
+#David
 def speichere_karten(karten_liste):
     with open(DATEI, "w", encoding="latin-1") as f:
         for karte in karten_liste:
@@ -93,12 +94,12 @@ def eingabe_nicht_leer(prompt_text):
 
     return text
 
-
+#Lindi Teil 1 Ende
 # Alle Karten anzeigen (optional nach Tag filtern)
 <<<<<<< HEAD
 # -------------------------------------------------------------
 =======
-
+#David
 >>>>>>> bb48c53 (abstände entfernt)
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
@@ -128,7 +129,7 @@ def zeige_karten(karten_liste, tag_filter=None):
 
 
 # Nutzer wählt eine Karten-Nummer           Bis hier ist der code allgemein und von allen zu verstehen
-
+#Carl
 def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
@@ -151,7 +152,7 @@ def wähle_index(karten_liste):
     print("Ungültige Auswahl.")
     return None
 
-
+#Carl Anfang Teil 1
 
 # Lernmodus: nacheinander Fragen zeigen                                                             carl Start
 
@@ -160,10 +161,10 @@ def lernen(karten_liste):
         print("Noch keine Karten vorhanden.")
         return
 
-    # Optional nur Karten mit bestimmtem Tag üben
+    # Optional nur Karten mit bestimmtem Tag üben, Strip ignoriert input leerzeichen
     tag = input("Nur Karten mit Tag üben (Enter = alle): ").strip()
 
-    # Reihenfolge mischen
+    # Reihenfolge mischen, WIESO LIST?
     reihenfolge = list(range(len(karten_liste)))
     random.shuffle(reihenfolge)
 
@@ -262,7 +263,7 @@ def prüfungsmodus(karten_liste):
             karte["richtig"] = karte["richtig"] + 1
         else:
             print(" Falsch.")
-            print("Richtig:", karte["antwort"])
+            print("Richtig:", karte[" antwort"])
             karte["falsch"] = karte["falsch"] + 1
 
     # Ergebnis anzeigen
@@ -293,7 +294,7 @@ def bearbeiten(karten_liste):
     print("\nLeere Eingabe = Feld behalten, '-' = Feld leeren.")
 
     # Frage bearbeiten
-    neu = input(f"Frage [{karte['frage']}]: ").strip()
+    neu = input( f"Frage [{karte['frage']}]: ").strip()
     if neu == "-":
         karte["frage"] = ""
     elif neu != "":
