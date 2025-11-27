@@ -1,122 +1,14 @@
-README – Karteikartensystem
+README File - Karteikartensystem (Carl,David,Yilllind)
 
-Programmierprojekt von Carl Klein, Yllind Gashi & David Lienhardt
-
-Projektbeschreibung
-
-Dieses Projekt ist ein Karteikartensystem, mit dem Nutzer eigene Lernkarten erstellen, bearbeiten und lernen können.
-Das Programm läuft in der Konsole und speichert alle Karteikarten dauerhaft in einer Textdatei (karteikarten.txt).
-
-Es gibt verschiedene Modi wie Lernen, Prüfungsmodus und Verwaltung der Karteikarten.
-Alle Eingaben erfolgen über die Tastatur.
-
-Funktionen
-1. Lernen
-
-Karteikarten werden zufällig angezeigt
-
-Optional: Lernen nach Tag (z. B. “Mathe”, “Geschichte”)
-
-Nutzer gibt an, ob die Frage richtig oder falsch beantwortet wurde
-
-Statistiken werden gespeichert
-
-2. Prüfungsmodus
-
-Nutzer wählt die Anzahl der Fragen
-
-Fragen werden zufällig ausgewählt
-
-Richtig/falsch wird automatisch geprüft
-
-Am Ende gibt es Punkte & Prozentwertung
-
-3. Karteikarten verwalten
-
-Hinzufügen neuer Karten
-
-Bearbeiten bestehender Karten
-
-Löschen von Karten
-
-Jede Karte hat:
-
-Frage
-
-Antwort
-
-beliebig viele Tags
-
-Zähler für richtige & falsche Antworten
-
-Installation & Voraussetzungen
-
-Keinerlei externe Bibliotheken nötig.
-Du benötigst:
-
-Python 3 (getestet auf Version 3.10+)
-
-Ausführung
-
-Starte das Programm in einer Konsole:
-
-python main.py
-
-
-oder, falls Windows:
-
-python3 main.py
-
-Dateistruktur
-projektordner/
-│
-├── main.py                # Hauptprogramm
-├── karteikarten.txt       # Speicherung aller Karten
-└── README.md              # Projektdokumentation
-
- Speicherformat der Karteikarten
-
-Jede Zeile in karteikarten.txt entspricht einer Karte und folgt diesem Schema:
-
-Frage | Antwort | Tag1;Tag2 | Anzahl_richtig | Anzahl_falsch
-
-
-Beispiel:
-
-Was ist die Hauptstadt von Frankreich?|Paris|Geo;Europa|3|1
-
- Beispielablauf im Menü
-=== Karteisystem by Carl, Yllind & David ===
+Funktionen beschrieb:
 1) Lernen
 2) Prüfungsmodus
-3) Karteikarte bearbeiten
-4) Karteikarte löschen
-5) Karte hinzufügen
-0) Beenden
-
- Mitwirkende
-
-Carl Klein – Lern– & Prüfungsmodus
-
-David Lienhardt – Bearbeiten & Löschen
-
-Yllind Gashi – Hinzufügen neuer Karten
-
-Alle – Allgemeine Struktur, Menüführung, Kommentare
-
-Besonderheiten des Projekts
-
-Nutzerfreundliches, simples Menü
-
-Tags zur Kategorisierung
-
-Speicherung von Lernfortschritt
-
-Zufällige Reihenfolge der Fragen
-
-Robuste Fehlerbehandlung bei Eingaben
+3) Bearbeiten
+Die Funktion hinzufügen() dient dazu, eine neue Karteikarte in das bestehende Karteikartensystem aufzunehmen. Bei der Nutzung dieser Funktion wird der Benutzer zunächst dazu aufgefordert, eine Frage und eine dazugehörige Antwort einzugeben. Diese beiden Felder müssen zwingend ausgefüllt werden, da das System sicherstellt, dass keine leeren Einträge angelegt werden können. Zusätzlich besteht die Möglichkeit, Tags zu vergeben, die optional sind und durch Semikolons getrennt eingegeben werden können. Tags dienen der thematischen Zuordnung der Karteikarten und erleichtern dem Benutzer später das Filtern oder themenspezifische Lernen. Nachdem alle Eingaben vorgenommen wurden, erstellt das Programm ein neues Datenobjekt, welches die Frage, die Antwort, die vergebenen Tags sowie die Zähler für richtige und falsche Antworten enthält. Diese Werte werden initial auf null gesetzt. Anschliessend wird die neue Karteikarte der bestehenden Liste hinzugefügt und dauerhaft in der Datei gespeichert. Damit erweitert die Funktion hinzufügen() das Karteikartensystem um neue Inhalte und stellt sicher, dass diese auch nach Beenden des Programms erhalten bleiben.
 
 
-exportieren.
 
-Welche Datei hättet ihr gerne?
+5) Löschen
+Die Funktion löschen() ermöglicht es dem Benutzer, eine vorhandene Karteikarte dauerhaft aus dem Karteikartensystem zu entfernen. Zunächst zeigt das Programm alle gespeicherten Karteikarten an, damit der Benutzer eine klare Übersicht erhält und die gewünschte Karte eindeutig auswählen kann. Die Auswahl erfolgt über die Eingabe der entsprechenden Kartennummer, wobei eine Sicherheitsabfrage eingebaut ist, um versehentliches Löschen zu verhindern. Nachdem der Benutzer eine Karte ausgewählt hat, wird er ausdrücklich gefragt, ob er diese wirklich löschen möchte. Erst wenn diese Frage mit „j“ bestätigt wird, entfernt das Programm die Karte endgültig aus der Liste. Anschliessend wird der aktualisierte Kartenbestand sofort in der Datei gespeichert, sodass die gelöschte Karte auch nach einem Neustart des Programms nicht mehr verfügbar ist. Die Funktion löschen() stellt damit sicher, dass der Benutzer jederzeit Kontrolle über seine Daten hat und nicht mehr benötigte oder fehlerhafte Karteikarten unkompliziert und sicher aus dem System entfernen kann.
+6) Hinzufügen
+0) Prgramm Beenden
