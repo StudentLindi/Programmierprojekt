@@ -260,11 +260,6 @@ def prüfungsmodus(karten_liste):
         richtige_antwort = karte["antwort"].strip().lower()
 
         if nutzer_antwort == richtige_antwort:
-            print(" Richtig!")
-            punkte = punkte + 1
-            karte["richtig"] = karte["richtig"] + 1
-        else:
-            print(" Falsch.")
             print("Richtig!")
             punkte = punkte + 1
             karte["richtig"] = karte["richtig"] + 1

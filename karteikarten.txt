@@ -1,9 +1,9 @@
 Was ist die Hauptstatd der Schweiz?|Bern|Geografie|1|1
 Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|0|2
-Was ist die Hauptstatd von Frankreich?|Paris|Geografie|0|1
+Was ist die Hauptstatd von Frankreich?|Paris|Geografie|1|1
 Was ist die Hauptstadt der vereinigtesn Staaten?|Washington D.C.|Geografie|1|2
 Was ist die Hauptstadt von Russland?|Moskau|Geogrfie|2|1
 Was ist die Hauptstadt von Italien?|Rom|Geografie|0|1
-Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|0|1
+Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|0|2
 Was ist die Hauptstadt von Spanien?|Madrid|Geografie|0|1
 Was ist die Hauptstadt von �sterreich?|Wien|Geografie|0|1
