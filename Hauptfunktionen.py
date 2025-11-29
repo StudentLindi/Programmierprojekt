@@ -1,5 +1,5 @@
 import random
-from konstanten import DATEI, RICHTIG, FALSCH
+from Konstanten import DATEI
 
 # ========= Datei laden =========
 def lade_karten():

@@ -1,10 +1,10 @@
-from funktionen import *
-from konstanten import DATEI
+from Hauptfunktionen import *
+from Konstanten import DATEI
 
 def menü():
     karten_liste = lade_karten()
     while True:
-        print("\n=== FHNW Karteikarten-System ===")
+        print("\n=== Abgabe Karteikarten-System ===")
         print("1) Lernen")
         print("2) Prüfung")
         print("3) Karte bearbeiten")
