@@ -1,1 +1,2 @@
+DATEI = "karteikarten.txt"
 

@@ -3,9 +3,10 @@
 
 import random
 import Hauptfunktionen
+import Constants
 
 # Datei, in der die Karteikarten gespeichert werden (Globale/Konstante)
-DATEI = "karteikarten.txt"
+
 #evtl weitere Konstante verwenden falls mehrere Dateien import werden
 #extra datei mit konstanten erstellen und dann import die datei
 #richtig und falsch bspw als Konstante erstellen
@@ -17,7 +18,7 @@ def lade_karten():
     karten_liste = []
 #hier haben wir Datei direkt als Konstante gespeichert
     try:
-        with open(DATEI, "r", encoding = "latin-1") as f:
+        with open(DATEI, "r", encoding = "utf-8") as f:
             for zeile in f:
                 # Zeilenumbruch entfernen
                 zeile = zeile.rstrip("\n")
