@@ -12,14 +12,29 @@ def menü():
         print("5) Neue Karte")
         print("0) Beenden")
 
-        match input("Auswahl: "):
-            case "1": lernen(karten_liste)
-            case "2": prüfungsmodus(karten_liste)
-            case "3": bearbeiten(karten_liste)
-            case "4": löschen(karten_liste)
-            case "5": hinzufügen(karten_liste)
-            case "0": print("Auf Wiedersehen!"); return
-            case _: print("Ungültige Eingabe.")
+        wahl = input("Auswahl: ")
+
+        if wahl == "1":
+            lernen(karten_liste)
+
+        elif wahl == "2":
+            prüfungsmodus(karten_liste)
+
+        elif wahl == "3":
+            bearbeiten(karten_liste)
+
+        elif wahl == "4":
+            löschen(karten_liste)
+
+        elif wahl == "5":
+            hinzufügen(karten_liste)
+
+        elif wahl == "0":
+            print("Auf Wiedersehen!")
+            return
+
+        else:
+            print("Ungültige Eingabe — bitte erneut versuchen.")
 
 if __name__ == "__main__":
     menü()
