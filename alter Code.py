@@ -1,18 +1,16 @@
-#definitive Abgabe Programmierprojekt Karteikartensystem
+#Definitive Abgabe Programmierprojekt Karteikartensystem
 #Carl Klein, Ylllind Gashi, David Lienhardt
 
+from Hauptfunktionen import lernen, prüfungsmodus, bearbeiten, löschen, hinzufügen
+from Konstanten import DATEI
 import random
-import Hauptfunktionen
-import Constants
 
-# Datei, in der die Karteikarten gespeichert werden (Globale/Konstante)
 
 #evtl weitere Konstante verwenden falls mehrere Dateien import werden
 #extra datei mit konstanten erstellen und dann import die datei
 #richtig und falsch bspw als Konstante erstellen
 
-# Karteikarten aus der Datei laden
-#Lindi Teil 1
+# Karteikarten aus der Datei laden, #Lindi Teil 1
 
 def lade_karten():
     karten_liste = []
@@ -70,9 +68,9 @@ def lade_karten():
 
 
 # Karteikarten in die Datei schreiben
-#David, Encoding (Latin 1 sehr spezifisch)
+#David, Encoding (utf8 gemäss Feedback von Felix)
 def speichere_karten(karten_liste):
-    with open(DATEI, "w", encoding="latin-1") as f:
+    with open(DATEI, "w", encoding="utf-8") as f:
         for karte in karten_liste:
             # Tags wieder zu einem String zusammensetzen
             if karte["tags"]:

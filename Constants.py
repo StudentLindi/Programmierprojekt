@@ -1,2 +1,0 @@
-DATEI = "karteikarten.txt"
-
