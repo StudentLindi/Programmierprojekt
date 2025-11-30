@@ -155,11 +155,11 @@ def prüfungsmodus(karten_liste):
         user = input("Antwort: ").lower().strip()
 
         if user == karte["antwort"].lower().strip():
-            print("✔ Richtig")
+            print("Richtig")
             punkte += 1
             karte["richtig"] += 1
         else:
-            print("✘ Falsch – richtig wäre:", karte["antwort"])
+            print("Falsch – richtig wäre:", karte["antwort"])
             karte["falsch"] += 1
 
     print(f"\nErgebnis: {punkte}/{anzahl} Punkte "
@@ -190,7 +190,7 @@ def bearbeiten(karten_liste):
         karte["tags"] = [t.strip() for t in tags.split(";")]
 
     speichere_karten(karten_liste)
-    print("✔ Karte gespeichert")
+    print("Karte gespeichert")
 
 
 # ========= Hinzufügen =========
@@ -208,4 +208,4 @@ def hinzufügen(karten_liste):
     }
     karten_liste.append(neue_karte)
     speichere_karten(karten_liste)
-    print("✔ Karte hinzugefügt")
+    print("Karte hinzugefügt")
