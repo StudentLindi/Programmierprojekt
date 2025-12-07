@@ -2,6 +2,7 @@ import random
 from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING
 
 # ========= Datei laden =========
+#lindi
 def lade_karten():
     karten_liste = []
     try:
@@ -49,6 +50,7 @@ def lade_karten():
 
 
 # ========= Speichern =========
+#David
 def speichere_karten(karten_liste):
     with open(DATEI, "w", encoding=ENCODING) as f:
         for karte in karten_liste:
@@ -74,6 +76,7 @@ def eingabe_nicht_leer(prompt_text):
 
 
 # ========= Anzeige =========
+#Lindi
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
     ausgabe = 0
@@ -90,7 +93,7 @@ def zeige_karten(karten_liste, tag_filter=None):
     if ausgabe == 0:
         print("(keine passenden Karten)")
 
-
+#Carl
 def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
@@ -113,6 +116,7 @@ def wähle_index(karten_liste):
 
 
 # ========= Lernmodus =========
+#Carl
 def lernen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -148,6 +152,7 @@ def lernen(karten_liste):
 
 
 # ========= Prüfungsmodus =========
+#Carl
 def prüfungsmodus(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
@@ -190,6 +195,7 @@ def prüfungsmodus(karten_liste):
 
 
 # ========= Bearbeiten =========
+#David
 def bearbeiten(karten_liste):
     zeige_karten(karten_liste)
     idx = wähle_index(karten_liste)
@@ -213,8 +219,35 @@ def bearbeiten(karten_liste):
     speichere_karten(karten_liste)
     print("Karte gespeichert")
 
+# ========= Löschen (NEU) =========
+#David
+def löschen(karten_liste):
+    if not karten_liste:
+        print("Keine Karten zum Löschen vorhanden.")
+        return
+        
+    zeige_karten(karten_liste)
+    
+    # Nutzer wählt Index der zu löschenden Karte
+    idx = wähle_index(karten_liste)
+    if idx is None:
+        return
+
+    karte_zu_löschen = karten_liste[idx]
+    
+    # Sicherheitsabfrage
+    sicher = input(f"Soll die Karte '{karte_zu_löschen['frage']}' WIRKLICH gelöscht werden? (j/n): ").strip().lower()
+
+    if sicher == 'j':
+        del karten_liste[idx]  # Karte aus der Liste entfernen
+        speichere_karten(karten_liste)
+        print("Karte erfolgreich gelöscht und gespeichert.")
+    else:
+        print("Löschvorgang abgebrochen.")
+
 
 # ========= Hinzufügen =========
+#Lindi
 def hinzufügen(karten_liste):
     frage = eingabe_nicht_leer("Frage: ")
     antwort = eingabe_nicht_leer("Antwort: ")
