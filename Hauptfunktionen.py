@@ -11,23 +11,39 @@ def lade_karten():
                 if zeile == "":
                     continue
 
-                teile = zeile.split("|")     # wieder direktes Trennzeichen
-                if len(teile) < 5:
-                    continue
+                try:
+                    teile = zeile.split("|")
+                    if len(teile) < 5:
+                        print(f"WARNUNG: Zeile ignoriert (weniger als 5 Teile): {zeile[:20]}...")
+                        continue
 
-                frage, antwort, tags_str, richtig, falsch = teile
-                tags = tags_str.split(";") if tags_str else []   # Tags wieder direkt getrennt
+                    frage, antwort, tags_str, richtig, falsch = teile
 
-                karten_liste.append({
-                    "frage": frage,
-                    "antwort": antwort,
-                    "tags": tags,
-                    "richtig": int(richtig),
-                    "falsch": int(falsch)
-                })
+                    # 1. Prüfen, ob Zähler int sind
+                    richtig_int = int(richtig)
+                    falsch_int = int(falsch)
+                    
+                    # Tags-Behandlung bleibt gleich
+                    tags = tags_str.split(";") if tags_str else []
+
+                    karten_liste.append({
+                        "frage": frage,
+                        "antwort": antwort,
+                        "tags": tags,
+                        "richtig": richtig_int,
+                        "falsch": falsch_int
+                    })
+
+                except ValueError:
+                    # Fängt Fehler ab, wenn int(richtig) oder int(falsch) fehlschlägt
+                    print(f"FEHLER: Zeile ignoriert (ungültige Zähler): {zeile[:20]}...")
+                    continue # Geht zur nächsten Zeile
 
     except FileNotFoundError:
-        pass
+        print(f"INFO: Datei '{DATEI}' nicht gefunden. Starte mit leerer Liste.")
+    except IOError as e:
+        # Fängt allgemeine Lese-/Schreibfehler ab
+        print(f"SCHWERER FEHLER beim Lesen der Datei: {e}")
 
     return karten_liste
 
@@ -81,14 +97,19 @@ def wähle_index(karten_liste):
         return None
     try:
         nummer = int(input("Nummer der Karte (0=Abbrechen): ").strip())
+        
         if nummer == 0:
             return None
         if 1 <= nummer <= len(karten_liste):
             return nummer - 1
-    except:
-        pass
-    print("Ungültige Auswahl.")
-    return None
+        else:
+            print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
+            return None
+            
+    except ValueError:
+        # Fängt ab, wenn Nutzer Buchstaben statt Zahlen eingibt
+        print("Ungültige Eingabe. Bitte eine Zahl eingeben.")
+        return None
 
 
 # ========= Lernmodus =========
