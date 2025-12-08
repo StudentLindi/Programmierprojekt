@@ -1,4 +1,4 @@
-Was ist die Hauptstadt der Schweiz?|Bern|Geografie|5|1
+Was ist die Hauptstadt der Schweiz?|Bern|Geografie|6|1
 Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|1|2
 Was ist die Hauptstadt von Frankreich?|Paris|Geografie|4|2
 Was ist die Hauptstadt der Vereinigten Staaten?|Washington D.C.|Geografie|1|4
