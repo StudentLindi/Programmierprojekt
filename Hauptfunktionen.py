@@ -3,6 +3,7 @@ from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING
 
 # ========= Datei laden =========
 #lindi
+#hallo
 def lade_karten():
     karten_liste = []
     try:
