@@ -122,6 +122,8 @@ def frage_bewertung():
     while True:
         bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
         if bewertung in {RICHTIG, FALSCH, ""}:
+            # Prüft, ob die Eingabe eine der erlaubten Optionen ist: richtig, falsch oder leer (skip)
+            # (Set-Literal-Notation)
             return bewertung
         print("Ungültige Eingabe! Bitte 'r' für richtig, 'f' für falsch oder Enter drücken.")
 
