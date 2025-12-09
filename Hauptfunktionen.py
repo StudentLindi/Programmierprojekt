@@ -122,6 +122,35 @@ def wähle_index(karten_liste):
         else:
             print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
 
+def wähle_tag(karten_liste):
+    # Alle Tags einsammeln
+    alle_tags = sorted({tag for karte in karten_liste for tag in karte["tags"]})
+
+    if not alle_tags:
+        print("Keine Tags vorhanden – es werden alle Karten verwendet.")
+        return ""
+
+    print("\nVerfügbare Tags:")
+    for i, tag in enumerate(alle_tags, start=1):
+        print(f" {i}) {tag}")
+
+    auswahl = input("Tag wählen (Nummer oder Name, Enter = alle): ").strip()
+
+    # Enter → alle
+    if auswahl == "":
+        return ""
+
+    # Zahl eingegeben?
+    if auswahl.isdigit():
+        nummer = int(auswahl)
+        if 1 <= nummer <= len(alle_tags):
+            return alle_tags[nummer - 1]
+        else:
+            print("Ungültige Nummer – es werden alle Karten verwendet.")
+            return ""
+
+    # sonst: direkt den eingegebenen Text als Tag verwenden
+    return auswahl
 # ========= Lernmodus =========
 #Carl
 def frage_bewertung():
@@ -150,7 +179,7 @@ def lernen(karten_liste):
         print("Noch keine Karten vorhanden.")
         return
 
-    tag = input("Tag zum Filtern (Enter = alle): ").strip()
+    tag = wähle_tag(karten_liste)
     reihenfolge = list(range(len(karten_liste)))
     random.shuffle(reihenfolge)
 
@@ -191,8 +220,9 @@ def prüfungsmodus(karten_liste):
         print("Keine Karten vorhanden.")
         return
 
-    tag = input("Tagfilter (Enter = alle): ").strip()
+    tag = wähle_tag(karten_liste)
     passende = [k for k in karten_liste if not tag or tag in k["tags"]]
+
     if not passende:
         print("Keine passenden Karten.")
         return
