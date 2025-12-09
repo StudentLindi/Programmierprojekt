@@ -105,8 +105,9 @@ def wähle_index(karten_liste):
         print("Keine Karten vorhanden.")
         return None
 
-    while True:
+    while True:  # Eingabe solange wiederholen, bis gültig
         eingabe = input("Nummer der Karte (0=Abbrechen): ").strip()
+
         try:
             nummer = int(eingabe)
         except ValueError:
@@ -115,6 +116,7 @@ def wähle_index(karten_liste):
 
         if nummer == 0:
             return None
+        
         if 1 <= nummer <= len(karten_liste):
             return nummer - 1
         else:
@@ -198,7 +200,6 @@ def prüfungsmodus(karten_liste):
     try:
         # Versuch, die Eingabe in eine Zahl umzuwandeln
         anzahl = int(input(f"Wieviele Fragen? (1–{len(passende)}): "))
-        
     except ValueError: # Nur abfangen, wenn int() fehlschlägt
         # Fallback auf Standardwert bei ungültiger Eingabe
         anzahl = min(10, len(passende))
