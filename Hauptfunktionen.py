@@ -118,6 +118,25 @@ def wähle_index(karten_liste):
 
 # ========= Lernmodus =========
 #Carl
+def frage_bewertung():
+    while True:
+        bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
+        if bewertung in {RICHTIG, FALSCH, ""}:
+            return bewertung
+        print("Ungültige Eingabe! Bitte 'r' für richtig, 'f' für falsch oder Enter drücken.")
+
+# Neu gemacht von Carl um Lernmodus sauberer zu halten
+# Eigene Funktion für Bewertung und Weitermachen und IF ELIF entfernt 
+def frage_weitermachen():
+    while True:
+        wahl = input("Weiter? (Enter = ja / q = Nein): ").strip().lower()
+        if wahl in WEITER_JA:
+            return True
+        if wahl in WEITER_NEIN:
+            return False
+        print("Fehler: Bitte nur Enter (für Ja) oder 'q' (für Nein) eingeben.")
+
+
 def lernen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -126,10 +145,12 @@ def lernen(karten_liste):
     tag = input("Tag zum Filtern (Enter = alle): ").strip()
     reihenfolge = list(range(len(karten_liste)))
     random.shuffle(reihenfolge)
-    geübt = 0
+
+    geuebt = 0
 
     for idx in reihenfolge:
         karte = karten_liste[idx]
+
         if tag and tag not in karte["tags"]:
             continue
 
@@ -137,20 +158,23 @@ def lernen(karten_liste):
         input("[Enter für Antwort]")
         print("Antwort:", karte["antwort"])
 
-        bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
+        bewertung = frage_bewertung()
+
         if bewertung == RICHTIG:
             karte["richtig"] += 1
         elif bewertung == FALSCH:
             karte["falsch"] += 1
 
-        geübt += 1
-        if input("weiter? (Enter ja / q Nein): ").lower() == "q":
+        geuebt += 1
+
+        if not frage_weitermachen():
             break
 
-    if geübt == 0:
+    if geuebt == 0:
         print("Keine passende Karte geübt.")
-    speichere_karten(karten_liste)
 
+    speichere_karten(karten_liste)
+    return geuebt
 
 # ========= Prüfungsmodus =========
 #Carl
