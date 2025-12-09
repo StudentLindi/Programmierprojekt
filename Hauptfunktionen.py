@@ -1,5 +1,5 @@
 import random
-from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING
+from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING, WEITER_JA, WEITER_NEIN
 
 # ========= Datei laden =========
 #lindi
