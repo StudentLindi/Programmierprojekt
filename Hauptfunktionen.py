@@ -15,8 +15,8 @@ def lade_karten():
 
                 try:
                     teile = zeile.split("|")
-                    if len(teile) < 5:
-                        print(f"WARNUNG: Zeile ignoriert (weniger als 5 Teile): {zeile[:20]}...")
+                    if len(teile) != 5:
+                        print(f"WARNUNG: Zeile ignoriert (erwarte 5 Teile, habe {len(teile)}): {zeile[:30]}...")
                         continue
 
                     frage, antwort, tags_str, richtig, falsch = teile
@@ -53,18 +53,23 @@ def lade_karten():
 # ========= Speichern =========
 #David
 def speichere_karten(karten_liste):
-    with open(DATEI, "w", encoding=ENCODING) as f:
-        for karte in karten_liste:
-            tags_str = ";".join(karte["tags"]) if karte["tags"] else ""  # Tags mit ;
+    try:
+        with open(DATEI, "w", encoding=ENCODING) as f:
+            for karte in karten_liste:
+                tags_str = ";".join(karte["tags"]) if karte["tags"] else ""  # Tags mit ;
 
-            zeile = "|".join([
-                karte["frage"],
-                karte["antwort"],
-                tags_str,
-                str(karte["richtig"]),
-                str(karte["falsch"])
-            ])
-            f.write(zeile + "\n")
+                zeile = "|".join([
+                    karte["frage"],
+                    karte["antwort"],
+                    tags_str,
+                    str(karte["richtig"]),
+                    str(karte["falsch"])
+                ])
+                f.write(zeile + "\n")
+
+    except IOError as e:
+        print(f"FEHLER: Konnte Datei '{DATEI}' nicht speichern: {e}")
+
 
 
 # ========= Eingaben =========
@@ -99,22 +104,21 @@ def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
         return None
-    try:
-        nummer = int(input("Nummer der Karte (0=Abbrechen): ").strip())
-        
+
+    while True:
+        eingabe = input("Nummer der Karte (0=Abbrechen): ").strip()
+        try:
+            nummer = int(eingabe)
+        except ValueError:
+            print("Ungültige Eingabe. Bitte eine Zahl eingeben.")
+            continue
+
         if nummer == 0:
             return None
         if 1 <= nummer <= len(karten_liste):
             return nummer - 1
         else:
             print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
-            return None
-            
-    except ValueError:
-        # Fängt ab, wenn Nutzer Buchstaben statt Zahlen eingibt
-        print("Ungültige Eingabe. Bitte eine Zahl eingeben.")
-        return None
-
 
 # ========= Lernmodus =========
 #Carl
