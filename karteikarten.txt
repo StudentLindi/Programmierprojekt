@@ -2,7 +2,35 @@ Was ist die Hauptstadt der Schweiz?|Bern|Geografie|6|1
 Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|1|2
 Was ist die Hauptstadt von Frankreich?|Paris|Geografie|4|2
 Was ist die Hauptstadt der Vereinigten Staaten?|Washington|Geografie|1|6
-Was ist die Hauptstadt von Russland?|Moskau|Geogrfie|6|1
+Was ist die Hauptstadt von Russland?|Moskau|Geografie|6|1
 Was ist die Hauptstadt von Italien?|Rom|Geografie|2|1
 Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|2|2
 Was ist die Hauptstadt von Spanien?|Madrid|Geografie|3|1
+Wie heisst das englische Wort fuer Buch?|book|Englisch|0|0
+Wie heisst das englische Wort fuer Tisch?|table|Englisch|0|0
+Wie heisst das englische Wort fuer Stuhl?|chair|Englisch|0|0
+Wie heisst das englische Wort fuer Hund?|dog|Englisch|0|0
+Wie heisst das englische Wort fuer Katze?|cat|Englisch|0|0
+Wie heisst das englische Wort fuer Haus?|house|Englisch|0|0
+Wie heisst das englische Wort fuer Auto?|car|Englisch|0|0
+Wie heisst das englische Wort fuer Strasse?|street|Englisch|0|0
+Wie heisst das englische Wort fuer Wasser?|water|Englisch|0|0
+Wie heisst das englische Wort fuer Freund?|friend|Englisch|0|0
+Wie heisst das englische Wort fuer Lehrer?|teacher|Englisch|0|0
+Wie heisst das englische Wort fuer Schule?|school|Englisch|0|0
+Wie heisst das englische Wort fuer Essen?|food|Englisch|0|0
+Wie heisst das englische Wort fuer Apfel?|apple|Englisch|0|0
+Wie heisst das englische Wort fuer Zeit?|time|Englisch|0|0
+Wann endete der Zweite Weltkrieg?|1945|Geschichte|0|0
+Wie hiess der erste Praesident der USA?|George Washington|Geschichte|0|0
+Wer baute die Pyramiden?|Aegypter|Geschichte|0|0
+Wo entstand die Demokratie?|Griechenland|Geschichte|0|0
+Wann begann der Erste Weltkrieg?|1914|Geschichte|0|0
+Wer war der Herrscher des Roemischen Reiches?|Caesar|Geschichte|0|0
+Was war die Hauptstadt des Roemischen Reiches?|Rom|Geschichte|0|0
+Wie nannte man die Ritterzeit?|Mittelalter|Geschichte|0|0
+Welche Mauer teilte Deutschland bis 1989?|Berliner Mauer|Geschichte|0|0
+Welches Volk erfand die Hieroglyphen?|Aegypter|Geschichte|0|0
+Was war die Waehrung der DDR?|Mark|Geschichte|0|0
+Wie hiess das deutsche Reich im Mittelalter?|Heiliges Roemisches Reich|Geschichte|0|0
+Wer entdeckte Amerika?|Kolumbus|Geschichte|0|0
