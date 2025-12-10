@@ -1,51 +1,51 @@
 Was ist die Hauptstadt der Schweiz?|Bern|Geografie|6|1
 Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|1|2
 Was ist die Hauptstadt von Frankreich?|Paris|Geografie|4|2
-Was ist die Hauptstadt der Vereinigten Staaten?|Washington|Geografie|1|6
+Was ist die Hauptstadt der Vereinigten Staaten?|Washington|Geografie|1|7
 Was ist die Hauptstadt von Russland?|Moskau|Geografie|6|1
-Was ist die Hauptstadt von Italien?|Rom|Geografie|2|1
+Was ist die Hauptstadt von Italien?|Rom|Geografie|2|2
 Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|2|2
 Was ist die Hauptstadt von Spanien?|Madrid|Geografie|3|1
 Wie heisst das englische Wort für Buch?|book|Englisch|0|0
 Wie heisst das englische Wort für Tisch?|table|Englisch|0|0
 Wie heisst das englische Wort für Stuhl?|chair|Englisch|0|0
 Wie heisst das englische Wort für Hund?|dog|Englisch|0|0
-Wie heisst das englische Wort für Katze?|cat|Englisch|0|0
+Wie heisst das englische Wort für Katze?|cat|Englisch|1|0
 Wie heisst das englische Wort für Haus?|house|Englisch|0|0
 Wie heisst das englische Wort für Auto?|car|Englisch|0|0
-Wie heisst das englische Wort für Strasse?|street|Englisch|0|0
-Wie heisst das englische Wort für Wasser?|water|Englisch|0|0
-Wie heisst das englische Wort für Freund?|friend|Englisch|0|0
-Wie heisst das englische Wort für Lehrer?|teacher|Englisch|0|0
-Wie heisst das englische Wort für Schule?|school|Englisch|0|0
+Wie heisst das englische Wort für Strasse?|street|Englisch|0|1
+Wie heisst das englische Wort für Wasser?|water|Englisch|1|0
+Wie heisst das englische Wort für Freund?|friend|Englisch|0|1
+Wie heisst das englische Wort für Lehrer?|teacher|Englisch|1|1
+Wie heisst das englische Wort für Schule?|school|Englisch|1|0
 Wie heisst das englische Wort für Essen?|food|Englisch|0|0
 Wie heisst das englische Wort für Apfel?|apple|Englisch|0|0
 Wie heisst das englische Wort für Zeit?|time|Englisch|0|0
 Wann endete der Zweite Weltkrieg?|1945|Geschichte|0|0
 Wie hiess der erste Praesident der USA?|George Washington|Geschichte|0|0
 Wer baute die Pyramiden?|Ägypter|Geschichte|0|0
-Wo entstand die Demokratie?|Griechenland|Geschichte|0|0
+Wo entstand die Demokratie?|Griechenland|Geschichte|0|1
 Wann begann der Erste Weltkrieg?|1914|Geschichte|0|0
 Wer war der Herrscher des Römischen Reiches?|Caesar|Geschichte|0|0
 Was war die Hauptstadt des Römischen Reiches?|Rom|Geschichte|0|0
 Wie nannte man die Ritterzeit?|Mittelalter|Geschichte|0|0
 Welche Mauer teilte Deutschland bis 1989?|Berliner Mauer|Geschichte|0|0
-Welches Volk erfand die Hieroglyphen?|Ägypter|Geschichte|0|0
-Was war die Währung der DDR?|Mark|Geschichte|0|0
+Welches Volk erfand die Hieroglyphen?|Ägypter|Geschichte|0|1
+Was war die Währung der DDR?|Mark|Geschichte|0|1
 Wie hiess das deutsche Reich im Mittelalter?|Heiliges Römisches Reich|Geschichte|0|0
 Wer entdeckte Amerika?|Kolumbus|Geschichte|0|0
 Wie heisst der heutige Bundeskanzler von Deutschland?|Merz|Geschichte|0|0
 Wer war der Führer in Deutschland im Zweiten Weltkrieg?|Hitler|Geschichte|0|0
 Wie heisst die Hauptstadt des Roemischen Reiches?|Rom|Geschichte|0|0
 Welches Land begann den Ersten Weltkrieg?|Deutschland|Geschichte|0|0
-Welche Stadt wurde im Krieg durch eine Atombombe zerstört?|Hiroshima|Geschichte|0|0
+Welche Stadt wurde im Krieg durch eine Atombombe zerstört?|Hiroshima|Geschichte|0|1
 Wie hiess das Land vor Deutschland 1918?|Kaiserreich|Geschichte|0|0
 Wer gründete das Römische Reich?|Romulus|Geschichte|0|0
 Wie hiess das Römische Heer?|Legion|Geschichte|0|0
 In welchem Land liegen die Pyramiden?|Ägypten|Geschichte|0|0
-Welches Land baute die Chinesische Mauer?|China|Geschichte|0|0
-Wer war der Entdecker von Amerika?|Kolumbus|Geschichte|0|0
+Welches Land baute die Chinesische Mauer?|China|Geschichte|1|0
+Wer war der Entdecker von Amerika?|Kolumbus|Geschichte|1|0
 Wie heisst die Hauptstadt von Ägypten?|Kairo|Geschichte|0|0
-Wer war der erste Mensch auf dem Mond?|Neil Armstrong|Geschichte|0|0
+Wer war der erste Mensch auf dem Mond?|Neil Armstrong|Geschichte|0|1
 Wer regierte Frankreich zur Zeit von Waterloo?|Napoleon|Geschichte|0|0
 Wann fiel die Berliner Mauer?|1989|Geschichte|0|0

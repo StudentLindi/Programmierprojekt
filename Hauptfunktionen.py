@@ -2,8 +2,7 @@ import random
 from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING, WEITER_JA, WEITER_NEIN
 
 # ========= Datei laden =========
-#lindi
-#hallo
+# Lindi Teil 1
 def lade_karten():
     karten_liste = []
     try:
@@ -25,7 +24,6 @@ def lade_karten():
                     richtig_int = int(richtig)
                     falsch_int = int(falsch)
                     
-                    # Tags-Behandlung bleibt gleich
                     tags = tags_str.split(";") if tags_str else []
 
                     karten_liste.append({
@@ -37,7 +35,8 @@ def lade_karten():
                     })
 
                 except ValueError:
-                    # Fängt Fehler ab, wenn int(richtig) oder int(falsch) fehlschlägt
+                    # Fängt Fehler ab, wenn int(richtig) oder int(falsch) fehlschlägt und überspringt kaputte
+                    # Zeile in der TXT Datei
                     print(f"FEHLER: Zeile ignoriert (ungültige Zähler): {zeile[:20]}...")
                     continue # Geht zur nächsten Zeile
 
@@ -51,7 +50,7 @@ def lade_karten():
 
 
 # ========= Speichern =========
-#David
+#David Teil 1
 def speichere_karten(karten_liste):
     try:
         with open(DATEI, "w", encoding=ENCODING) as f:
@@ -82,7 +81,7 @@ def eingabe_nicht_leer(prompt_text):
 
 
 # ========= Anzeige =========
-#Lindi
+#Lindi Teil 2
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
     ausgabe = 0
@@ -99,7 +98,7 @@ def zeige_karten(karten_liste, tag_filter=None):
     if ausgabe == 0:
         print("(keine passenden Karten)")
 
-#Carl
+#Carl Teil 1
 def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
@@ -136,7 +135,7 @@ def wähle_tag(karten_liste):
 
     auswahl = input("Tag wählen (Nummer oder Name, Enter = alle): ").strip()
 
-    # Enter → alle
+    # Enter für alle
     if auswahl == "":
         return ""
 
@@ -151,8 +150,9 @@ def wähle_tag(karten_liste):
 
     # sonst: direkt den eingegebenen Text als Tag verwenden
     return auswahl
+
 # ========= Lernmodus =========
-#Carl
+# auch Carl
 def frage_bewertung():
     while True:
         bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
@@ -173,7 +173,7 @@ def frage_weitermachen():
             return False
         print("Fehler: Bitte nur Enter (für Ja) oder 'q' (für Nein) eingeben.")
 
-
+# auch Carl
 def lernen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
@@ -260,7 +260,7 @@ def prüfungsmodus(karten_liste):
 
 
 # ========= Bearbeiten =========
-#David
+#David Teil 2
 def bearbeiten(karten_liste):
     zeige_karten(karten_liste)
     idx = wähle_index(karten_liste)
@@ -284,8 +284,7 @@ def bearbeiten(karten_liste):
     speichere_karten(karten_liste)
     print("Karte gespeichert")
 
-# ========= Löschen =========
-#David
+# ========= Löschen ========= (David)
 def löschen(karten_liste):
     if not karten_liste:
         print("Keine Karten zum Löschen vorhanden.")
@@ -312,7 +311,7 @@ def löschen(karten_liste):
 
 
 # ========= Hinzufügen =========
-#Lindi
+# Lindi Teil 3
 def hinzufügen(karten_liste):
     frage = eingabe_nicht_leer("Frage: ")
     antwort = eingabe_nicht_leer("Antwort: ")
