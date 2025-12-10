@@ -122,34 +122,42 @@ def wähle_index(karten_liste):
             print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
 
 def wähle_tag(karten_liste):
-    # Alle Tags einsammeln
-    alle_tags = sorted({tag for karte in karten_liste for tag in karte["tags"]})
 
+    alle_tags = []
+    # Alle Karten durchgehen
+    for karte in karten_liste:
+        # Alle Tags auf der aktuellen Karte anschauen
+        for tag in karte["tags"]:
+            # wenn Tag nicht in der Liste ist, hinzufügen über append
+            if tag not in alle_tags:
+                alle_tags.append(tag)
+
+    # Alphabetisch sortieren
+    alle_tags.sort()
+
+    # Falls keine tags vorhanden sind
     if not alle_tags:
-        print("Keine Tags vorhanden – es werden alle Karten verwendet.")
+        print("Keine Tags gefunden – es werden alle Karten gelernt.")
         return ""
 
-    print("\nVerfügbare Tags:")
-    for i, tag in enumerate(alle_tags, start=1):
-        print(f" {i}) {tag}")
+    print("\nVerfügbare Themen:")
+    for nummer, tag in enumerate(alle_tags, start=1):
+        print(f" {nummer}) {tag}")
 
-    auswahl = input("Tag wählen (Nummer oder Name, Enter = alle): ").strip()
+    eingabe = input("Bitte wählen (Nummer oder Name, Enter = Alles): ").strip()
 
-    # Enter für alle
-    if auswahl == "":
+    if eingabe == "":
         return ""
 
-    # Zahl eingegeben?
-    if auswahl.isdigit():
-        nummer = int(auswahl)
-        if 1 <= nummer <= len(alle_tags):
-            return alle_tags[nummer - 1]
+    if eingabe.isdigit():
+        index = int(eingabe) - 1
+        if 0 <= index < len(alle_tags):
+            return alle_tags[index]
         else:
-            print("Ungültige Nummer – es werden alle Karten verwendet.")
+            print("Ungültige Nummer! Ich nehme alle Karten.")
             return ""
 
-    # sonst: direkt den eingegebenen Text als Tag verwenden
-    return auswahl
+    return eingabe
 
 # ========= Lernmodus =========
 # auch Carl
