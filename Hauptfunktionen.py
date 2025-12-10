@@ -159,7 +159,6 @@ def wähle_tag(karten_liste):
 
     return eingabe
 
-# ========= Lernmodus =========
 # auch Carl
 def frage_bewertung():
     while True:
@@ -181,6 +180,7 @@ def frage_weitermachen():
             return False
         print("Fehler: Bitte nur Enter (für Ja) oder 'q' (für Nein) eingeben.")
 
+# ========= Lernmodus =========
 # auch Carl
 def lernen(karten_liste):
     if not karten_liste:

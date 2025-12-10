@@ -30,7 +30,7 @@ Wer war der Herrscher des Roemischen Reiches?|Caesar|Geschichte|0|0
 Was war die Hauptstadt des Roemischen Reiches?|Rom|Geschichte|0|0
 Wie nannte man die Ritterzeit?|Mittelalter|Geschichte|0|1
 Welche Mauer teilte Deutschland bis 1989?|Berliner Mauer|Geschichte|0|0
-Welches Volk erfand die Hieroglyphen?|Ägypter|Geschichte|0|1
+Welches Volk erfand die Hieroglyphen?|Ägypter|Geschichte|1|1
 Was war die Währung der DDR?|Mark|Geschichte|0|1
 Wie hiess das deutsche Reich im Mittelalter?|Heiliges Römisches Reich|Geschichte|0|0
 Wer entdeckte Amerika?|Kolumbus|Geschichte|0|0
