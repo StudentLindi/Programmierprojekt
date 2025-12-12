@@ -98,7 +98,9 @@ def zeige_karten(karten_liste, tag_filter=None):
     if ausgabe == 0:
         print("(keine passenden Karten)")
 
-#Carl Teil 1
+# Carl Teil 1
+# Indexwahl wird in bearbeiten und löschen genutzt (dort wird jeweils eine Karte ausgewählt)
+
 def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
@@ -122,6 +124,7 @@ def wähle_index(karten_liste):
             print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
 
 def wähle_tag(karten_liste):
+# wird genutzt in Lernen und Prüfungsmodus
 
     alle_tags = []
     # Alle Karten durchgehen
@@ -159,7 +162,9 @@ def wähle_tag(karten_liste):
 
     return eingabe
 
-# auch Carl
+# ========= Hilfsfunktionen Lernmodus =========
+# Neu gemacht von Carl um Lernmodus sauberer zu halten
+# auch Carl / Neu hinzugefügte Hilfsfunktion (in lernen )
 def frage_bewertung():
     while True:
         bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
@@ -169,7 +174,6 @@ def frage_bewertung():
             return bewertung
         print("Ungültige Eingabe! Bitte 'r' für richtig, 'f' für falsch oder Enter drücken.")
 
-# Neu gemacht von Carl um Lernmodus sauberer zu halten
 # Eigene Funktion für Bewertung und Weitermachen und IF ELIF entfernt 
 def frage_weitermachen():
     while True:
