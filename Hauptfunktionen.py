@@ -168,11 +168,14 @@ def wähle_tag(karten_liste):
 def frage_bewertung():
     while True:
         bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
-        if bewertung in {RICHTIG, FALSCH, ""}:
-            # Prüft, ob die Eingabe eine der erlaubten Optionen ist: richtig, falsch oder leer (skip)
-            # (Set-Literal-Notation)
+        if bewertung == RICHTIG:
             return bewertung
-        print("Ungültige Eingabe! Bitte 'r' für richtig, 'f' für falsch oder Enter drücken.")
+        elif bewertung == FALSCH:
+            return bewertung
+        elif bewertung == "":
+            return bewertung
+        else:
+            print("Ungültige Eingabe! Bitte 'r' für richtig, 'f' für falsch oder Enter drücken.")
 
 # Eigene Funktion für Bewertung und Weitermachen und IF ELIF entfernt 
 def frage_weitermachen():
@@ -180,9 +183,10 @@ def frage_weitermachen():
         wahl = input("Weiter? (Enter = ja / q = Nein): ").strip().lower()
         if wahl in WEITER_JA:
             return True
-        if wahl in WEITER_NEIN:
+        elif wahl in WEITER_NEIN:
             return False
-        print("Fehler: Bitte nur Enter (für Ja) oder 'q' (für Nein) eingeben.")
+        else:
+            print("Fehler: Bitte nur Enter (für Ja) oder 'q' (für Nein) eingeben.")
 
 # ========= Lernmodus =========
 # auch Carl
