@@ -36,4 +36,7 @@ def menü():
             print("Ungültige Eingabe — bitte erneut versuchen.")
 
 if __name__ == "__main__":
-    menü()
+    try:
+        menü()
+    except KeyboardInterrupt:
+        print("\nProgramm manuell beendet. Auf Wiedersehen!")

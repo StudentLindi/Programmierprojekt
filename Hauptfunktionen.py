@@ -298,6 +298,7 @@ def bearbeiten(karten_liste):
     neu = input(f"Antwort ({karte['antwort']}): ").strip()
     if neu:
         karte["antwort"] = neu
+        # Antwort änderbar ohne neue Frage zu stellen
 
     tags = input("Neue Tags (; getrennt / leer für keine Änderung): ").strip()
     if tags:
@@ -342,7 +343,7 @@ def eingabe_nicht_leer(prompt_text):
         text = input(prompt_text).strip()
     return text
 
-# ========= Hinzufügen =========
+# ========= neue Karte =========
 
 def hinzufügen(karten_liste):
     frage = eingabe_nicht_leer("Frage: ")
