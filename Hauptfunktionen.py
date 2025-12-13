@@ -1,8 +1,8 @@
 import random
-from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING
+from Konstanten import DATEI, RICHTIG, FALSCH, ENCODING, WEITER_JA, WEITER_NEIN
 
 # ========= Datei laden =========
-#lindi
+# Lindi Teil 1
 def lade_karten():
     karten_liste = []
     try:
@@ -14,8 +14,8 @@ def lade_karten():
 
                 try:
                     teile = zeile.split("|")
-                    if len(teile) < 5:
-                        print(f"WARNUNG: Zeile ignoriert (weniger als 5 Teile): {zeile[:20]}...")
+                    if len(teile) != 5:
+                        print(f"WARNUNG: Zeile ignoriert (erwarte 5 Teile, habe {len(teile)}): {zeile[:30]}...")
                         continue
 
                     frage, antwort, tags_str, richtig, falsch = teile
@@ -24,7 +24,6 @@ def lade_karten():
                     richtig_int = int(richtig)
                     falsch_int = int(falsch)
                     
-                    # Tags-Behandlung bleibt gleich
                     tags = tags_str.split(";") if tags_str else []
 
                     karten_liste.append({
@@ -36,7 +35,8 @@ def lade_karten():
                     })
 
                 except ValueError:
-                    # Fängt Fehler ab, wenn int(richtig) oder int(falsch) fehlschlägt
+                    # Fängt Fehler ab, wenn int(richtig) oder int(falsch) fehlschlägt und überspringt kaputte
+                    # Zeile in der TXT Datei
                     print(f"FEHLER: Zeile ignoriert (ungültige Zähler): {zeile[:20]}...")
                     continue # Geht zur nächsten Zeile
 
@@ -50,20 +50,25 @@ def lade_karten():
 
 
 # ========= Speichern =========
-#David
+#David Teil 1
 def speichere_karten(karten_liste):
-    with open(DATEI, "w", encoding=ENCODING) as f:
-        for karte in karten_liste:
-            tags_str = ";".join(karte["tags"]) if karte["tags"] else ""  # Tags mit ;
+    try:
+        with open(DATEI, "w", encoding=ENCODING) as f:
+            for karte in karten_liste:
+                tags_str = ";".join(karte["tags"]) if karte["tags"] else ""  # Tags mit ;
 
-            zeile = "|".join([
-                karte["frage"],
-                karte["antwort"],
-                tags_str,
-                str(karte["richtig"]),
-                str(karte["falsch"])
-            ])
-            f.write(zeile + "\n")
+                zeile = "|".join([
+                    karte["frage"],
+                    karte["antwort"],
+                    tags_str,
+                    str(karte["richtig"]),
+                    str(karte["falsch"])
+                ])
+                f.write(zeile + "\n")
+
+    except IOError as e:
+        print(f"FEHLER: Konnte Datei '{DATEI}' nicht speichern: {e}")
+
 
 
 # ========= Eingaben =========
@@ -76,7 +81,7 @@ def eingabe_nicht_leer(prompt_text):
 
 
 # ========= Anzeige =========
-#Lindi
+#Lindi Teil 2
 def zeige_karten(karten_liste, tag_filter=None):
     print("\n--- Karteikarten ---")
     ausgabe = 0
@@ -93,42 +98,112 @@ def zeige_karten(karten_liste, tag_filter=None):
     if ausgabe == 0:
         print("(keine passenden Karten)")
 
-#Carl
+# Carl Teil 1
+# Indexwahl wird in bearbeiten und löschen genutzt (dort wird jeweils eine Karte ausgewählt)
+
 def wähle_index(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
         return None
-    try:
-        nummer = int(input("Nummer der Karte (0=Abbrechen): ").strip())
-        
+
+    while True:  # Eingabe solange wiederholen, bis gültig
+        eingabe = input("Nummer der Karte (0=Abbrechen): ").strip()
+
+        try:
+            nummer = int(eingabe)
+        except ValueError:
+            print("Ungültige Eingabe. Bitte eine Zahl eingeben.")
+            continue
+
         if nummer == 0:
             return None
+        
         if 1 <= nummer <= len(karten_liste):
             return nummer - 1
         else:
             print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
-            return None
-            
-    except ValueError:
-        # Fängt ab, wenn Nutzer Buchstaben statt Zahlen eingibt
-        print("Ungültige Eingabe. Bitte eine Zahl eingeben.")
-        return None
 
+def wähle_tag(karten_liste):
+# wird genutzt in Lernen und Prüfungsmodus
+
+    alle_tags = []
+    # Alle Karten durchgehen
+    for karte in karten_liste:
+        # Alle Tags auf der aktuellen Karte anschauen
+        for tag in karte["tags"]:
+            # wenn Tag nicht in der Liste ist, hinzufügen über append
+            if tag not in alle_tags:
+                alle_tags.append(tag)
+
+    # Alphabetisch sortieren
+    alle_tags.sort()
+
+    # Falls keine tags vorhanden sind
+    if not alle_tags:
+        print("Keine Tags gefunden – es werden alle Karten gelernt.")
+        return ""
+
+    print("\nVerfügbare Themen:")
+    for nummer, tag in enumerate(alle_tags, start=1):
+        print(f" {nummer}) {tag}")
+
+    eingabe = input("Bitte wählen (Nummer oder Name, Enter = Alles): ").strip()
+
+    if eingabe == "":
+        return ""
+
+    if eingabe.isdigit():
+        index = int(eingabe) - 1
+        if 0 <= index < len(alle_tags):
+            return alle_tags[index]
+        else:
+            print("Ungültige Nummer! Ich nehme alle Karten.")
+            return ""
+
+    return eingabe
+
+# ========= Hilfsfunktionen Lernmodus =========
+# Neu gemacht von Carl um Lernmodus sauberer zu halten
+# auch Carl / Neu hinzugefügte Hilfsfunktion (in lernen )
+def frage_bewertung():
+    while True:
+        bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
+        if bewertung == RICHTIG:
+            return bewertung
+        elif bewertung == FALSCH:
+            return bewertung
+        elif bewertung == "":
+            return bewertung
+        else:
+            print("Ungültige Eingabe! Bitte 'r' für richtig, 'f' für falsch oder Enter drücken.")
+
+# Eigene Funktion für Bewertung und Weitermachen und IF ELIF entfernt 
+def frage_weitermachen():
+    while True:
+        wahl = input("Weiter? (Enter = ja / q = Nein): ").strip().lower()
+        if wahl in WEITER_JA:
+            return True
+        elif wahl in WEITER_NEIN:
+            return False
+        else:
+            print("Fehler: Bitte nur Enter (für Ja) oder 'q' (für Nein) eingeben.")
 
 # ========= Lernmodus =========
-#Carl
+# auch Carl
 def lernen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
         return
 
-    tag = input("Tag zum Filtern (Enter = alle): ").strip()
+    tag = wähle_tag(karten_liste)
     reihenfolge = list(range(len(karten_liste)))
     random.shuffle(reihenfolge)
-    geübt = 0
+
+    geuebt = 0
 
     for idx in reihenfolge:
         karte = karten_liste[idx]
+
         if tag and tag not in karte["tags"]:
             continue
 
@@ -136,20 +211,23 @@ def lernen(karten_liste):
         input("[Enter für Antwort]")
         print("Antwort:", karte["antwort"])
 
-        bewertung = input("Richtig? (r/f/Enter skip): ").strip().lower()
+        bewertung = frage_bewertung()
+
         if bewertung == RICHTIG:
             karte["richtig"] += 1
         elif bewertung == FALSCH:
             karte["falsch"] += 1
 
-        geübt += 1
-        if input("weiter? (Enter ja / q Nein): ").lower() == "q":
+        geuebt += 1
+
+        if not frage_weitermachen():
             break
 
-    if geübt == 0:
+    if geuebt == 0:
         print("Keine passende Karte geübt.")
-    speichere_karten(karten_liste)
 
+    speichere_karten(karten_liste)
+    return geuebt
 
 # ========= Prüfungsmodus =========
 #Carl
@@ -158,8 +236,9 @@ def prüfungsmodus(karten_liste):
         print("Keine Karten vorhanden.")
         return
 
-    tag = input("Tagfilter (Enter = alle): ").strip()
+    tag = wähle_tag(karten_liste)
     passende = [k for k in karten_liste if not tag or tag in k["tags"]]
+
     if not passende:
         print("Keine passenden Karten.")
         return
@@ -167,7 +246,6 @@ def prüfungsmodus(karten_liste):
     try:
         # Versuch, die Eingabe in eine Zahl umzuwandeln
         anzahl = int(input(f"Wieviele Fragen? (1–{len(passende)}): "))
-        
     except ValueError: # Nur abfangen, wenn int() fehlschlägt
         # Fallback auf Standardwert bei ungültiger Eingabe
         anzahl = min(10, len(passende))
@@ -198,7 +276,7 @@ def prüfungsmodus(karten_liste):
 
 
 # ========= Bearbeiten =========
-#David
+#David Teil 2
 def bearbeiten(karten_liste):
     zeige_karten(karten_liste)
     idx = wähle_index(karten_liste)
@@ -222,8 +300,7 @@ def bearbeiten(karten_liste):
     speichere_karten(karten_liste)
     print("Karte gespeichert")
 
-# ========= Löschen =========
-#David
+# ========= Löschen ========= (David)
 def löschen(karten_liste):
     if not karten_liste:
         print("Keine Karten zum Löschen vorhanden.")
@@ -250,7 +327,7 @@ def löschen(karten_liste):
 
 
 # ========= Hinzufügen =========
-#Lindi
+# Lindi Teil 3
 def hinzufügen(karten_liste):
     frage = eingabe_nicht_leer("Frage: ")
     antwort = eingabe_nicht_leer("Antwort: ")
