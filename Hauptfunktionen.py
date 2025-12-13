@@ -72,6 +72,7 @@ def speichere_karten(karten_liste):
 
 
 # ========= Eingaben =========
+# das hier sollte auch Lindi haben, da Eingabe nicht leer nur bei Karte hinzufügen genutzt wird
 def eingabe_nicht_leer(prompt_text):
     text = input(prompt_text).strip()
     while text == "":
@@ -100,6 +101,7 @@ def zeige_karten(karten_liste, tag_filter=None):
 
 # Carl Teil 1
 # Indexwahl wird in bearbeiten und löschen genutzt (dort wird jeweils eine Karte ausgewählt)
+# nicht optimal bei Carl, sollte theoretisch eher bei der Person sein, die Karte löschen und Bearbeiten hat
 
 def wähle_index(karten_liste):
     if not karten_liste:
@@ -194,19 +196,25 @@ def lernen(karten_liste):
     if not karten_liste:
         print("Noch keine Karten vorhanden.")
         return
+        # falls leer wird Funktion direkt beendet
 
     tag = wähle_tag(karten_liste)
     reihenfolge = list(range(len(karten_liste)))
+        # aus der Länge der Kartenliste, wird die Range bspw. bei 10 0 bis 9 genommen und in eine eigene
+        # Liste hinzugefügt, Reihenfolge welche mit Random Shuffle gemischt wird
     random.shuffle(reihenfolge)
 
     geuebt = 0
 
     for idx in reihenfolge:
         karte = karten_liste[idx]
+        # idx ist immer ein Index aus der gemischten Liste
+        # karte = karten_liste[idx] holt die entsprechende Karte heraus
+        # jetzt ist karte ein einzelnes Dictionary (eine Lernkarte)
 
         if tag and tag not in karte["tags"]:
             continue
-
+        # überprüft ob der Tag in der Karte enthalten ist       
         print("\nFrage:", karte["frage"])
         input("[Enter für Antwort]")
         print("Antwort:", karte["antwort"])
@@ -228,6 +236,7 @@ def lernen(karten_liste):
 
     speichere_karten(karten_liste)
     return geuebt
+    # return gibt einen Wert an den Funktionsaufruf zurück
 
 # ========= Prüfungsmodus =========
 #Carl
@@ -235,9 +244,16 @@ def prüfungsmodus(karten_liste):
     if not karten_liste:
         print("Keine Karten vorhanden.")
         return
+        # falls leer wird Funktion direkt beendet
 
     tag = wähle_tag(karten_liste)
-    passende = [k for k in karten_liste if not tag or tag in k["tags"]]
+    passende = []
+
+    for karte in karten_liste:
+        if not tag:
+            passende.append(karte)
+        elif tag in karte["tags"]:
+            passende.append(karte)
 
     if not passende:
         print("Keine passenden Karten.")

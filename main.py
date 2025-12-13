@@ -1,5 +1,5 @@
 from Hauptfunktionen import *
-
+# was macht der Stern? beim Import
 def menü():
     karten_liste = lade_karten()
     print(f"\n=== Abgabe Karteikarten-System — {len(karten_liste)} Karten geladen ===")

@@ -27,10 +27,10 @@ Wie heisst das englische Wort für Hund?|dog|Englisch|2|0
 Wie heisst das englische Wort für Katze?|cat|Englisch|1|0
 Wie heisst das englische Wort für Haus?|house|Englisch|0|1
 Wie heisst das englische Wort für Auto?|car|Englisch|1|0
-Wie heisst das englische Wort für Strasse?|street|Englisch|1|2
+Wie heisst das englische Wort für Strasse?|street|Englisch|2|2
 Wie heisst das englische Wort für Wasser?|water|Englisch|1|0
 Wie heisst das englische Wort für Freund?|friend|Englisch|0|1
-Wie heisst das englische Wort für Lehrer?|teacher|Englisch|1|1
+Wie heisst das englische Wort für Lehrer?|teacher|Englisch|2|1
 Wie heisst das englische Wort für Schule?|school|Englisch|3|0
 Wie heisst das englische Wort für Essen?|food|Englisch|0|0
 Wie heisst das englische Wort für Apfel?|apple|Englisch|0|0
