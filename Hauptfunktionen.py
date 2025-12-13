@@ -165,10 +165,13 @@ def prüfungsmodus(karten_liste):
         return
 
     try:
+        # Versuch, die Eingabe in eine Zahl umzuwandeln
         anzahl = int(input(f"Wieviele Fragen? (1–{len(passende)}): "))
-    except:
+        
+    except ValueError: # Nur abfangen, wenn int() fehlschlägt
+        # Fallback auf Standardwert bei ungültiger Eingabe
         anzahl = min(10, len(passende))
-        print(f"Ungültig – nehme {anzahl}")
+        print(f"Ungültige Eingabe (keine Zahl) – nehme {anzahl} Fragen.")
 
     anzahl = max(1, min(anzahl, len(passende)))
 
@@ -219,7 +222,7 @@ def bearbeiten(karten_liste):
     speichere_karten(karten_liste)
     print("Karte gespeichert")
 
-# ========= Löschen (NEU) =========
+# ========= Löschen =========
 #David
 def löschen(karten_liste):
     if not karten_liste:
