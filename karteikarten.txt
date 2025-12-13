@@ -1,36 +1,22 @@
-<<<<<<< HEAD
-Was ist die Hauptstatd der Schweiz?|Bern|Geografie|0|1
-Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|1|0
-Was ist die Hauptstatd von Frankreich?|Paris|Geografie|0|1
-Was ist die Hauptstadt der vereinigtesn Staaten?|Washington D.C.|Geografie|0|1
-Was ist die Hauptstadt von Russland?|Moskau|Geogrfie|1|1
-Was ist die Hauptstadt von Italien?|Rom|Geografie|1|0
-Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|0|1
-Was ist die Hauptstadt von Spanien?|Madrid|Geografie|1|1
-Was ist die Hauptstadt von sterreich?|Wien|Geografie|1|0
-=======
 Was ist die Hauptstadt der Schweiz?|Bern|Geografie|6|1
 Was ist die Hauptstadt von Deutschland?|Berlin|Geografie|1|2
-Was ist die Hauptstadt von Frankreich?|Paris|Geografie|4|2
+Was ist die Hauptstadt von Frankreich?|Paris|Geografie|5|2
 Was ist die Hauptstadt der Vereinigten Staaten?|Washington|Geografie|1|7
 Was ist die Hauptstadt von Russland?|Moskau|Geografie|6|1
 Was ist die Hauptstadt von Italien?|Rom|Geografie|2|2
 Was ist die Hauptstadt von der Niederlande?|Amsterdam|Geografie|2|2
 Was ist die Hauptstadt von Spanien?|Madrid|Geografie|3|1
-<<<<<<< HEAD
->>>>>>> 7f0706f00a92ef4263f4f45c6ad2aa9566b02db3
-=======
 Wie heisst das englische Wort für Buch?|book|Englisch|0|0
 Wie heisst das englische Wort für Tisch?|table|Englisch|1|0
 Wie heisst das englische Wort für Stuhl?|chair|Englisch|0|1
-Wie heisst das englische Wort für Hund?|dog|Englisch|2|0
+Wie heisst das englische Wort für Hund?|dog|Englisch|2|1
 Wie heisst das englische Wort für Katze?|cat|Englisch|1|0
 Wie heisst das englische Wort für Haus?|house|Englisch|0|1
 Wie heisst das englische Wort für Auto?|car|Englisch|1|0
 Wie heisst das englische Wort für Strasse?|street|Englisch|2|2
-Wie heisst das englische Wort für Wasser?|water|Englisch|1|0
+Wie heisst das englische Wort für Wasser?|water|Englisch|2|0
 Wie heisst das englische Wort für Freund?|friend|Englisch|0|1
-Wie heisst das englische Wort für Lehrer?|teacher|Englisch|2|1
+Wie heisst das englische Wort für Lehrer?|teacher|Englisch|3|1
 Wie heisst das englische Wort für Schule?|school|Englisch|3|0
 Wie heisst das englische Wort für Essen?|food|Englisch|0|0
 Wie heisst das englische Wort für Apfel?|apple|Englisch|0|0
@@ -63,4 +49,3 @@ Wie heisst die Hauptstadt von Ägypten?|Kairo|Geschichte|0|0
 Wer war der erste Mensch auf dem Mond?|Neil Armstrong|Geschichte|0|1
 Wer regierte Frankreich zur Zeit von Waterloo?|Napoleon|Geschichte|0|0
 Wann fiel die Berliner Mauer?|1989|Geschichte|0|0
->>>>>>> 9faf3de031a8e84296c4411f6175e08cf4e9d9b0

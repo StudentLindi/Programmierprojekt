@@ -84,7 +84,8 @@ def zeige_karten(karten_liste, tag_filter=None):
 
         print(f"{index:>3}. {karte['frage']}  [Tags: {tags}]  "
               f"Richtig: {karte['richtig']}  Falsch: {karte['falsch']}")
-
+        # index >3 zeigt die Bündigkeit (Rechtsbündig) an und es muss mehr als 3 Zeichen haben (damit alles gleich formatiert ist)
+        # falls mehr als 999 Karteikarten Index >4
     if ausgabe == 0:
         print("(keine passenden Karten)")
 
@@ -113,6 +114,7 @@ def wähle_index(karten_liste):
         else:
             print(f"Ungültiger Bereich. Bitte eine Zahl zwischen 1 und {len(karten_liste)} wählen.")
 
+# Carl
 def wähle_tag(karten_liste):
 # wird genutzt in Lernen und Prüfungsmodus
 
@@ -124,7 +126,7 @@ def wähle_tag(karten_liste):
             # wenn Tag nicht in der Liste ist, hinzufügen über append
             if tag not in alle_tags:
                 alle_tags.append(tag)
-
+            # falls Tag in Tags nicht vorhanden ist (in Karten Liste) nimmt es alle Tags
     # Alphabetisch sortieren
     alle_tags.sort()
 
