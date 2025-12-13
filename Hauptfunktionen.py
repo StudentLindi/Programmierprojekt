@@ -70,17 +70,6 @@ def speichere_karten(karten_liste):
         print(f"FEHLER: Konnte Datei '{DATEI}' nicht speichern: {e}")
 
 
-
-# ========= Eingaben =========
-# das hier sollte auch Lindi haben, da Eingabe nicht leer nur bei Karte hinzufügen genutzt wird
-def eingabe_nicht_leer(prompt_text):
-    text = input(prompt_text).strip()
-    while text == "":
-        print("Eingabe darf nicht leer sein.")
-        text = input(prompt_text).strip()
-    return text
-
-
 # ========= Anzeige =========
 #Lindi Teil 2
 def zeige_karten(karten_liste, tag_filter=None):
@@ -99,9 +88,8 @@ def zeige_karten(karten_liste, tag_filter=None):
     if ausgabe == 0:
         print("(keine passenden Karten)")
 
-# Carl Teil 1
+# David
 # Indexwahl wird in bearbeiten und löschen genutzt (dort wird jeweils eine Karte ausgewählt)
-# nicht optimal bei Carl, sollte theoretisch eher bei der Person sein, die Karte löschen und Bearbeiten hat
 
 def wähle_index(karten_liste):
     if not karten_liste:
@@ -342,8 +330,18 @@ def löschen(karten_liste):
         print("Löschvorgang abgebrochen.")
 
 
-# ========= Hinzufügen =========
 # Lindi Teil 3
+# ========= Eingaben =========
+
+def eingabe_nicht_leer(prompt_text):
+    text = input(prompt_text).strip()
+    while text == "":
+        print("Eingabe darf nicht leer sein.")
+        text = input(prompt_text).strip()
+    return text
+
+# ========= Hinzufügen =========
+
 def hinzufügen(karten_liste):
     frage = eingabe_nicht_leer("Frage: ")
     antwort = eingabe_nicht_leer("Antwort: ")
