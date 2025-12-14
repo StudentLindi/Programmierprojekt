@@ -56,7 +56,8 @@ def speichere_karten(karten_liste):
         with open(DATEI, "w", encoding=ENCODING) as f:
             for karte in karten_liste:
                 tags_str = ";".join(karte["tags"]) if karte["tags"] else ""  # Tags mit ;
-
+# verbindet alle Elemente einer String-Liste zu einem einzigen String
+# indem es zwischen die Elemente ein definiertes Trennzeichen setzt, ohne zusätzliche Zeichen am Anfang oder Ende zu erzeugen.
                 zeile = "|".join([
                     karte["frage"],
                     karte["antwort"],
