@@ -1,5 +1,6 @@
 from Hauptfunktionen import *
-# was macht der Stern? beim Import
+# alle öffentlichen Namen (Funktionen, Klassen und Variablen) werden importiert durch Stern
+
 def menü():
     karten_liste = lade_karten()
     print(f"\n=== Abgabe Karteikarten-System — {len(karten_liste)} Karten geladen ===")

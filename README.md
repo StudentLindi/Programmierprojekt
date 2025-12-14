@@ -1,17 +1,167 @@
 README File - Karteikartensystem (Carl,David,Yilllind)
+1. Projektbeschreibung:
 
-Funktionen beschrieb:
-1) Lernen: Das ist der Lern-Modus deines digitalen Karteikarten-Trainers. Dieses Skript steuert, wie der Benutzer seine Karten übt. Zuerst prüft das Programm, ob überhaupt Karten da sind. Dann kann der Benutzer über Stichwörter (Tags) wählen, ob er nur bestimmte Themen lernen möchte. Die Karten werden zufällig gemischt, damit man die Reihenfolge nicht auswendig lernt. Der Ablauf ist einfach: Die Frage wird angezeigt, der Benutzer drückt Enter, um die Antwort zu sehen, und muss sich dann selbst bewerten: Richtig oder Falsch. Diese Funktion (frage_bewertung) sorgt dafür, dass nur gültige Antworten eingegeben werden. Nach jeder Karte fragt das Programm (frage_weitermachen), ob der Benutzer weitermachen oder aufhören möchte. Alle Erfolge und Misserfolge werden sofort in den Karten gespeichert, und am Ende sorgt speichere_karten dafür, dass der Lernstand dauerhaft gesichert wird.
+Dieses Programm ist ein Karteikartensystem, das zum Lernen und Abfragen von Wissen genutzt werden kann. Benutzer können Karteikarten erstellen, bearbeiten, löschen und entweder im Lernmodus oder im Prüfungsmodus üben. 
+Der Lernfortschritt wird im Lernmodus dauerhaft gespeichert.
+
+2. Vorraussetzungen und Start
+
+Python Version: Python 3.10 oder höher
+
+Benötigte Dateien im gleichen Ordner:
+
+main.py (Menü / Startpunkt)
+
+Hauptfunktionen.py
+
+Konstanten.py
+
+Start des Programms:
+python main.py
+
+3. Dateiformat
+
+Die Karteikarten werden zeilenweise in folgendem Format gespeichert:
+Frage|Antwort|tag1;tag2|richtig|falsch
+Beispiel:
+Was ist Python?|Programmiersprache|Informatik;Programmieren|3|1
+
+=====================
+
+4. Menü und Funktionen
+
+1) Lernen: 
+
+Lernmodus zum selbstständigen Üben
+
+Optionales Filtern nach Themen (Tags)
+
+Karten werden zufällig gemischt
+
+Ablauf:
+
+Frage anzeigen → Enter → Antwort anzeigen
+
+Selbstbewertung:
+
+r = richtig
+
+f = falsch
+
+Enter = überspringen
+
+Lernstand (richtig/falsch) wird sofort gespeichert
+
+Nach jeder Karte kann entschieden werden, ob weiter gelernt wird 
+
+2) Prüfung:
+
+Testmodus zur Wissensüberprüfung
+
+Optionales Filtern nach Tags
+
+Benutzer wählt Anzahl Fragen
+
+Bei ungültiger Eingabe wird automatisch eine Standardanzahl gewählt
+
+Ablauf:
+
+Frage wird angezeigt
+
+Antwort wird eingegeben
+
+Exakter Vergleich (ohne Gross-/Kleinschreibung)
+
+Bewertung:
+
+Richtig = 1 Punkt
+
+Falsch = 0 Punkte
+
+Am Ende Ausgabe von Punktzahl und Prozentwert
+
+Ergebnisse werden gespeichert
    
-3) Prüfungsmodus: Das ist der Prüfungsmodus (oder Test-Modus) deines Programms. Dieser Teil ist dazu da, das Wissen des Benutzers wirklich zu testen. Zuerst wird geprüft, ob es Karten gibt, und dann kann der Benutzer wieder über die Stichwörter (Tags) einstellen, welche Themen abgefragt werden sollen. Wenn Karten gefunden wurden, fragt das Programm, wie viele Fragen der Benutzer machen möchte. Wenn der Benutzer hier eine ungültige Eingabe macht (z.B. Text statt Zahl), wählt das Programm automatisch eine kleine Anzahl an Fragen aus. Die ausgewählten Karten werden zufällig gemischt. Dann startet der Test: Der Benutzer liest die Frage und tippt die Antwort ein. Das Programm vergleicht die Antwort des Benutzers direkt mit der richtigen Lösung und zählt die Punkte. Richtig = Punkt, Falsch = null Punkte. Am Ende des Tests wird dem Benutzer das Ergebnis in Punkten und als Prozentzahl angezeigt. Wie auch im Lernmodus werden die Ergebnisse (richtig/falsch) in den Karten gespeichert und am Ende durch die Funktion speichere_karten dauerhaft gesichert.
+3) Karte bearbeiten
+
+Anzeige aller Karten
+
+Auswahl über Kartennummer
+
+Bearbeitbar:
+
+Frage
+
+Antwort
+
+Tags
+
+Leere Eingaben lassen bestehende Werte unverändert
+
+Änderungen werden dauerhaft gespeichert
+
+4) Karte löschen
+
+Anzeige aller Karten
+
+Auswahl über Kartennummer
+
+Sicherheitsabfrage vor dem Löschen
+
+Karte wird endgültig entfernt und gespeichert
+
+5) Neue Karte
+
+Erstellung neuer Karteikarten
+
+Pflichtfelder:
+
+Frage
+
+Antwort
+
+Optionale Tags (durch ; getrennt)
+
+Zähler für richtig/falsch starten bei 0
+
+Karte wird sofort gespeichert
    
-4) Bearbeiten
-Die Funktion hinzufügen() dient dazu, eine neue Karteikarte in das bestehende Karteikartensystem aufzunehmen. Bei der Nutzung dieser Funktion wird der Benutzer zunächst dazu aufgefordert, eine Frage und eine dazugehörige Antwort einzugeben. Diese beiden Felder müssen zwingend ausgefüllt werden, da das System sicherstellt, dass keine leeren Einträge angelegt werden können. Zusätzlich besteht die Möglichkeit, Tags zu vergeben, die optional sind und durch Semikolons getrennt eingegeben werden können. Tags dienen der thematischen Zuordnung der Karteikarten und erleichtern dem Benutzer später das Filtern oder themenspezifische Lernen. Nachdem alle Eingaben vorgenommen wurden, erstellt das Programm ein neues Datenobjekt, welches die Frage, die Antwort, die vergebenen Tags sowie die Zähler für richtige und falsche Antworten enthält. Diese Werte werden initial auf null gesetzt. Anschliessend wird die neue Karteikarte der bestehenden Liste hinzugefügt und dauerhaft in der Datei gespeichert. Damit erweitert die Funktion hinzufügen() das Karteikartensystem um neue Inhalte und stellt sicher, dass diese auch nach Beenden des Programms erhalten bleiben.
+0) Beenden
 
+Beendet das Programm sauber
 
-6) Löschen
-Die Funktion löschen() ermöglicht es dem Benutzer, eine vorhandene Karteikarte dauerhaft aus dem Karteikartensystem zu entfernen. Zunächst zeigt das Programm alle gespeicherten Karteikarten an, damit der Benutzer eine klare Übersicht erhält und die gewünschte Karte eindeutig auswählen kann. Die Auswahl erfolgt über die Eingabe der entsprechenden Kartennummer, wobei eine Sicherheitsabfrage eingebaut ist, um versehentliches Löschen zu verhindern. Nachdem der Benutzer eine Karte ausgewählt hat, wird er ausdrücklich gefragt, ob er diese wirklich löschen möchte. Erst wenn diese Frage mit „j“ bestätigt wird, entfernt das Programm die Karte endgültig aus der Liste. Anschliessend wird der aktualisierte Kartenbestand sofort in der Datei gespeichert, sodass die gelöschte Karte auch nach einem Neustart des Programms nicht mehr verfügbar ist. Die Funktion löschen() stellt damit sicher, dass der Benutzer jederzeit Kontrolle über seine Daten hat und nicht mehr benötigte oder fehlerhafte Karteikarten unkompliziert und sicher aus dem System entfernen kann.
+Speichert alle Änderungen
 
-7) Hinzufügen: Dies ist die Funktion, damit der Benutzer neue Karten erstellen kann. Es ist der Eingabeteil des Programms. Der Benutzer muss nacheinander die Frage und die dazugehörige Antwort eingeben. Das Programm prüft dabei, dass diese Felder nicht leer bleiben. Zusätzlich kann der Benutzer Stichwörter (Tags) eingeben, die durch Semikolon (;) getrennt werden (zum Beispiel: "Mathe; Klasse 7"). Diese Tags helfen später beim Filtern im Lern- oder Prüfungsmodus. Für jede neue Karte legt das Programm sofort die Zähler für "richtig" und "falsch" auf null fest, da die Karte noch nicht geübt wurde. Sobald die Karte fertig ist, wird sie zur gesamten Kartenliste hinzugefügt. Zum Schluss wird die gesamte Liste mithilfe von speichere_karten dauerhaft gesichert, damit die neue Karte beim nächsten Start des Programms auch noch da ist.
-   
-0) Prgramm Beenden: 
+Abbruch via Strg + C wird abgefangen
+
+=====================
+=====================
+
+5. Eingaberegeln und Bedienung
+
+Tags: Nummer, Name oder Enter für alle
+
+Weiter im Lernmodus:
+
+    Enter = weiter
+    q = beenden
+
+Antwortvergleich im Prüfungsmodus:
+    
+    Exakt (ohne Tippfehler-Toleranz)
+
+6. Fehlerbehandlung
+
+Ungültige Benutzereingaben werden abgefangen
+
+Beschädigte Zeilen in der Textdatei werden übersprungen
+
+Programm startet auch ohne vorhandene Kartendatei
+
+7. Aufgabenteilung
+
+Carl: Lernmodus, Prüfungsmodus, Tag-Auswahl, Hilfsfunktionen
+
+David: Speichern, Löschen, Bearbeiten, Index-Auswahl
+
+Yilllind: Laden der Karten, Anzeige, Eingabevalidierung
